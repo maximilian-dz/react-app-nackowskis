@@ -17,3 +17,8 @@ body {
 .transparent {
   background-color: transparent;
 }
+
+.AuctionBox
+{
+  width: 50%;
+}
