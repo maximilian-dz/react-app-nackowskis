@@ -9,7 +9,7 @@ export default class NavBar extends Component{
             <nav>
                 <ul>
                     <li><NavLink to='/Dashboard'>Home</NavLink></li>
-                    <li><NavLink to='/CreateAction'>Create Action</NavLink></li>
+                    <li><NavLink to='/CreateAuction'>Create Auction</NavLink></li>
                 </ul>
             </nav>
         </div>);
