@@ -20,20 +20,21 @@ class App extends Component {
     });
   }
   handleChange = (val) => {
-    let currentList = this.state.auctions;
-    let newList = [];
+    console.log(val);
+    // let currentList = this.state.auctions;
+    // let newList = [];
 
-    if (val !== '' && val !== undefined) {
-      newList = currentList.filter((auction) =>
-        auction.Titel.toLowerCase().includes(val)
-      );
-    } else {
-      newList = currentList;
-    }
+    // if (val !== '' && val !== undefined) {
+    //   newList = currentList.filter((auction) =>
+    //     auction.Titel.toLowerCase().includes(val)
+    //   );
+    // } else {
+    //   newList = currentList;
+    // }
 
-    this.setState({
-      filtered: newList
-    });
+    // this.setState({
+    //   filtered: newList
+    // });
   };
 
   render() {
@@ -41,7 +42,7 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <Navbar />
-          <Search />
+          <Search onChange={this.handleChange} />
         </div>
         <Switch>
           <Route
