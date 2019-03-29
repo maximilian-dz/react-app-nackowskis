@@ -17,3 +17,13 @@ body {
 .transparent {
   background-color: transparent;
 }
+
+.row
+{
+  width: 50%;
+}
+
+.naf
+{
+  text-align: center;
+}

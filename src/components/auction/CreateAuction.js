@@ -20,6 +20,12 @@ export default class CreateAuction extends Component{
         fetch(WebAPI, {
             method: 'POST',
             body: data,
+            // method: 'POST',
+            // body: JSON.stringify(),
+            // headers: {
+            //     'Accept': 'application/json, text/plain, */*',
+            //     'Content-Type': 'application/json'
+            //}
         });
     }
 
