@@ -15,7 +15,7 @@ const AuctionList = ({ auctions }) => {
     <div>{auctionsItems}</div>
   ) : (
     <div>
-      <p>No auctions found</p>
+      <h6 className="naf">No auctions found</h6>
     </div>
   );
 
