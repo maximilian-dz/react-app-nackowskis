@@ -5,8 +5,11 @@ export default class Auctionlist extends Component
 {
     render()
     {
-        let Auctions = "";
+        let AuctionsItems = this.props.auctions.map((auction) => 
+        {
+            return (<AuctionSummary name={auction.name} description={auction.description}/>)
+        });
 
-        return (<div>{Auctions}</div>)
+        return (<div>{ AuctionsItems }</div>)
     }
 }
