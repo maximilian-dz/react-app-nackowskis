@@ -17,7 +17,7 @@ export async function getBids(group, auction) {
 }
 
 export function createAuction(group, json) {
-    fetch("http://nackowskis.azurewebsites.net/api/auktion/"+ group{
+    fetch("http://nackowskis.azurewebsites.net/api/auktion/"+ group, {
         method: 'POST',
         body: JSON.stringify(json),
         headers: {
