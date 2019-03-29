@@ -5,20 +5,19 @@ export async function fetchData(url) {
 }
 
 export async function getAllAuctions(group) {
-    return fetchData("http://nackowskis.azurewebsites.net/api/Auktion/" + group)
+    return fetchData("http://nackowskis.azurewebsites.net/api/auktion/" + group)
 }
 
 export async function getAuction(group, auction) {
-    return await fetchData("http://nackowskis.azurewebsites.net/api/Auktion/" + group + "/" + auction)
+    return await fetchData("http://nackowskis.azurewebsites.net/api/auktion/" + group + "/" + auction)
 }
 
 export async function getBids(group, auction) {
     return await fetchData("http://nackowskis.azurewebsites.net/api/bud/" + group + "/" + auction)
 }
 
-// Warning! This is a work in progress... Do not use this yet! :)
-export function post(group, auction, json) {
-    fetch("http://nackowskis.azurewebsites.net/api/auktion/"+ group +"/"+ auction, {
+export function createAuction(group, json) {
+    fetch("http://nackowskis.azurewebsites.net/api/auktion/"+ group{
         method: 'POST',
         body: JSON.stringify(json),
         headers: {
@@ -28,4 +27,16 @@ export function post(group, auction, json) {
     }).then(function () {
         console.log('POST successful.')
     })
+}
+
+export function updateAuction(){
+
+}
+
+export function deleteAuction(){
+
+}
+
+export function placeBid(){
+
 }
