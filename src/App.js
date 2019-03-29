@@ -21,20 +21,20 @@ class App extends Component {
   }
   handleChange = (val) => {
     console.log(val);
-    // let currentList = this.state.auctions;
-    // let newList = [];
+    let currentList = this.state.auctions;
+    let newList = [];
 
-    // if (val !== '' && val !== undefined) {
-    //   newList = currentList.filter((auction) =>
-    //     auction.Titel.toLowerCase().includes(val)
-    //   );
-    // } else {
-    //   newList = currentList;
-    // }
+    if (val !== '' && val !== undefined) {
+      newList = currentList.filter((auction) =>
+        auction.Titel.toLowerCase().includes(val)
+      );
+    } else {
+      newList = currentList;
+    }
 
-    // this.setState({
-    //   filtered: newList
-    // });
+    this.setState({
+      filtered: newList
+    });
   };
 
   render() {
@@ -56,7 +56,7 @@ class App extends Component {
               />
             )}
           />
-          <Route
+          {/* <Route
             path="/auction/:AuktionID/"
             render={(props) => (
               <AuctionDetails
@@ -65,7 +65,7 @@ class App extends Component {
                 auctions={this.state.auctions}
               />
             )}
-          />
+          /> */}
         </Switch>
       </BrowserRouter>
     );
