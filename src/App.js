@@ -56,7 +56,7 @@ class App extends Component {
               />
             )}
           />
-          {/* <Route
+          { <Route
             path="/auction/:AuktionID/"
             render={(props) => (
               <AuctionDetails
@@ -65,7 +65,7 @@ class App extends Component {
                 auctions={this.state.auctions}
               />
             )}
-          /> */}
+          /> }
         </Switch>
       </BrowserRouter>
     );
