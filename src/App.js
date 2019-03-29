@@ -4,7 +4,6 @@ import Navbar from './components/layout/Navbar';
 import Dashboard from './components/dashboard/Dashboard';
 import AuctionDetails from './components/auction/AuctionDetails';
 import Search from './components/dashboard/Search';
-import { getAllAuctions } from './components/API/WebAPI';
 
 class App extends Component {
   state = {
@@ -12,14 +11,12 @@ class App extends Component {
     filtered: []
   };
   componentWillMount() {
-    getAllAuctions('7').then((res) => {
-      this.setState({
-        auctions: res,
-        filtered: res
-      });
-    });
+    // const auctions = fetchAuctions();
+    // this.setState({
+    //   auctions,
+    //   filtered: auctions
+    // })
   }
-
   handleChange = (val) => {
     let currentList = this.state.auctions;
     let newList = [];
@@ -41,32 +38,32 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className="App">
-          {/* <Navbar />
+          <Navbar />
           <Search />
-          <Switch>
-            <Route
-              exact
-              path="/"
-              render={(props) => (
-                <Dashboard
-                  {...props}
-                  isAuthed={true}
-                  auctions={this.state.filtered}
-                />
-              )}
-            />
-            <Route
-              path="/auction/:AuktionID/"
-              render={(props) => (
-                <AuctionDetails
-                  {...props}
-                  isAuthed={true}
-                  auctions={this.state.auctions}
-                />
-              )}
-            />
-          </Switch> */}
         </div>
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={(props) => (
+              <Dashboard
+                {...props}
+                isAuthed={true}
+                auctions={this.state.filtered}
+              />
+            )}
+          />
+          <Route
+            path="/auction/:AuktionID/"
+            render={(props) => (
+              <AuctionDetails
+                {...props}
+                isAuthed={true}
+                auctions={this.state.auctions}
+              />
+            )}
+          />
+        </Switch>
       </BrowserRouter>
     );
   }
