@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import AuctionSummary from './AuctionSummary.js';
+import {Link} from 'react-router-dom';
 
-export default class Auctionlist extends Component
+const AuctionList = ({ auctions }) =>
 {
-    render()
-    {
-        let AuctionsItems = this.props.auctions.map((auction) => 
+        let AuctionsItems = auctions.map((auction) => 
         {
-            return (<AuctionSummary name={auction.name} description={auction.description}/>)
+            return (<Link><AuctionSummary auction={auction}/></Link>)
         });
 
         return (<div>{ AuctionsItems }</div>)
-    }
 }
+
+export default AuctionList;

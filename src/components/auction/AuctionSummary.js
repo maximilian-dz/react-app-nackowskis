@@ -1,15 +1,14 @@
-import React, { Component } from 'react';
-import App from '../../App.js';
+import React from 'react';
 
-export default class AuctionSummary extends Component
+const AuctionSummary = ({ auction }) =>
 {
-    render()
-    {
         return(<div className="App">
-            <h3>{ this.props.name }</h3>
-            <p>{ this.props.description }</p>
+            <h3>{ auction.Titel }</h3>
+            <p>{ auction.Beskrivning }</p>
+            <p>{ auction.SlutDatum }</p>
+            <p>{ auction.SlutDatum }</p>
             <button> Open </button>
         </div>);
-    }
 }
 
+export default AuctionSummary;
