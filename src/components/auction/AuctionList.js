@@ -6,7 +6,7 @@ const AuctionList = ({ auctions }) =>
 {
         let AuctionsItems = auctions.map((auction) => 
         {
-            return (<Link><AuctionSummary auction={auction}/></Link>)
+            return (<Link to={'/auction/' + auction.AuktionID}><AuctionSummary auction={auction}/></Link>)
         });
 
         return (<div>{ AuctionsItems }</div>)
