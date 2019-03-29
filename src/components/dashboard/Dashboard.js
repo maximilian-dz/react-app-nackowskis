@@ -1,14 +1,12 @@
-import React,{Component} from 'react';
+import React from 'react';
 import Auctionlist from '../auction/AuctionList';
 
-export default class Dashboard extends Component
-{
-    render()
-    {
-        let AuctionsArray = [];
+const Dashboard = ({ auctions }) => {
+  return (
+    <div>
+      <Auctionlist auctions={auctions} />
+    </div>
+  );
+};
 
-        return(<div>
-            <Auctionlist auctions = { AuctionsArray } />
-        </div>);
-    }
-}
+export default Dashboard;

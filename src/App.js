@@ -4,6 +4,7 @@ import Navbar from './components/layout/Navbar';
 import Dashboard from './components/dashboard/Dashboard';
 import AuctionDetails from './components/auction/AuctionDetails';
 import Search from './components/dashboard/Search';
+import { getAllAuctions } from './components/API/WebAPI';
 
 class App extends Component {
   state = {
@@ -11,11 +12,12 @@ class App extends Component {
     filtered: []
   };
   componentWillMount() {
-    // const auctions = fetchAuctions();
-    // this.setState({
-    //   auctions,
-    //   filtered: auctions
-    // })
+    getAllAuctions('7').then((res) => {
+      this.setState({
+        auctions: res,
+        filtered: res
+      });
+    });
   }
   handleChange = (val) => {
     let currentList = this.state.auctions;
@@ -30,7 +32,7 @@ class App extends Component {
     }
 
     this.setState({
-      filteredAuctions: newList
+      filtered: newList
     });
   };
 
