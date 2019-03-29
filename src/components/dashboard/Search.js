@@ -16,6 +16,7 @@ class Search extends Component {
                 type="search"
                 required
                 onChange={this.handleChange}
+                placeholder="Search auction..."
               />
               <label className="label-icon" htmlFor="search">
                 <i className="material-icons">search</i>
