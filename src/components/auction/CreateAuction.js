@@ -1,34 +1,34 @@
 import React,{Component} from 'react';
-import {createAuction} from '../API/WebAPI';
-
-//EJ KLAR
+//import {createAuction} from '../API/WebAPI';
 
 export default class CreateAuction extends Component{
 
-    constructor(props)
-    {
-        super(props);
-        this.handleSubmit = this.handleSubmit.bind(this);
+    state = {
+        title: undefined,
+        beskrivning: undefined,
+        startDatum: undefined,
+        slutDatum: undefined,
+        utropspris: undefined,
+        skapadAv: undefined
     }
 
-    handleSubmit(event)
-    {
-        event.preventDefault();
-        const data = new FormData(event.target);
+    handleSubmit = (e) =>{
+        e.preventDefault();
+        this.props.onSubmit(this.state)
+    }
 
-        //Fixa klart post metoden
-        fetch(createAuction, {
-            method: 'POST',
-            body: data,
-            // method: 'POST',
-            // body: JSON.stringify(),
-            // headers: {
-            //     'Accept': 'application/json, text/plain, */*',
-            //     'Content-Type': 'application/json'
-            //}
+    onChange = (e) => {
+        this.setState({
+            [e.target.title]: e.target.value,
+            [e.target.beskrivning]: e.target.value,
+            [e.target.startDatum]: e.target.value,
+            [e.target.startDatum]: e.target.value,
+            [e.target.slutDatum]: e.target.value,
+            [e.target.utropspris]: e.target.value,
+            [e.target.skapadAv]: e.target.value
         });
     }
-
+    
     render()
     {
         return(<form onSubmit={this.handleSubmit}>
