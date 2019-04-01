@@ -5,7 +5,8 @@ import Dashboard from './components/dashboard/Dashboard';
 import AuctionDetails from './components/auction/AuctionDetails';
 import Search from './components/dashboard/Search';
 import { getAllAuctions } from './components/API/WebAPI';
-// import CreateAuction from './components/auction/CreateAuction';
+import CreateAuction from './components/auction/CreateAuction';
+import AuctionBids from './components/auction/AuctionBids';
 
 class App extends Component {
   state = {
@@ -32,6 +33,8 @@ class App extends Component {
     });
   };
 
+  addAuction = (newAuction) => {};
+
   render() {
     return (
       <BrowserRouter>
@@ -51,18 +54,18 @@ class App extends Component {
               />
             )}
           />
-          {
-            <Route
-              path="/auction/:AuktionID/"
-              render={(props) => (
-                <AuctionDetails
-                  {...props}
-                  isAuthed={true}
-                  auctions={this.state.auctions}
-                />
-              )}
-            />
-          }
+          <Route
+            path="/auction/:AuktionID/"
+            render={(props) => (
+              <AuctionDetails
+                {...props}
+                isAuthed={true}
+                auctions={this.state.auctions}
+              />
+            )}
+          />
+          <Route path="/create" component={CreateAuction} />
+          <Route path="/bids" component={AuctionBids} />
         </Switch>
       </BrowserRouter>
     );
