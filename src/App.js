@@ -5,6 +5,7 @@ import Dashboard from './components/dashboard/Dashboard';
 import AuctionDetails from './components/auction/AuctionDetails';
 import Search from './components/dashboard/Search';
 import { getAllAuctions } from './components/API/WebAPI';
+// import CreateAuction from './components/auction/CreateAuction';
 
 class App extends Component {
   state = {
@@ -66,6 +67,7 @@ class App extends Component {
               />
             )}
           /> */}
+          {/* <Route path="create" component={CreateAuction} /> */}
         </Switch>
       </BrowserRouter>
     );

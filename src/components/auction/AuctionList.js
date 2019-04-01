@@ -18,8 +18,6 @@ const AuctionList = ({ auctions }) => {
       <p>No auctions found</p>
     </div>
   );
-
-  //   return  <div>{AuctionsItems}</div>;
 };
 
 export default AuctionList;

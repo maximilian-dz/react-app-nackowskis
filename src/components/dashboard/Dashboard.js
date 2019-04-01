@@ -1,10 +1,16 @@
 import React from 'react';
-import Auctionlist from '../auction/AuctionList';
+import AuctionList from '../auction/AuctionList';
 
 const Dashboard = ({ auctions }) => {
   return (
     <div>
-      <Auctionlist auctions={auctions} />
+      <div className="dashboard container">
+        <div className="row">
+          <div className="col s12 m12">
+            <AuctionList auctions={auctions} />
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
