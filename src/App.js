@@ -33,7 +33,9 @@ class App extends Component {
     });
   };
 
-  addAuction = (newAuction) => {};
+  addAuction = (newAuction) => {
+    console.log(newAuction);
+  };
 
   render() {
     return (
@@ -64,7 +66,16 @@ class App extends Component {
               />
             )}
           />
-          <Route path="/create" component={CreateAuction} />
+          <Route
+            path="/create"
+            render={(props) => (
+              <CreateAuction
+                {...props}
+                isAuthed={true}
+                onSubmit={this.addAuction}
+              />
+            )}
+          />
           <Route path="/bids" component={AuctionBids} />
         </Switch>
       </BrowserRouter>
