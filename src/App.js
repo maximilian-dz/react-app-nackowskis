@@ -57,17 +57,18 @@ class App extends Component {
               />
             )}
           />
-          {/* <Route
-            path="/auction/:AuktionID/"
-            render={(props) => (
-              <AuctionDetails
-                {...props}
-                isAuthed={true}
-                auctions={this.state.auctions}
-              />
-            )}
-          /> */}
-          {/* <Route path="create" component={CreateAuction} /> */}
+          {
+            <Route
+              path="/auction/:AuktionID/"
+              render={(props) => (
+                <AuctionDetails
+                  {...props}
+                  isAuthed={true}
+                  auctions={this.state.auctions}
+                />
+              )}
+            />
+          }
         </Switch>
       </BrowserRouter>
     );
