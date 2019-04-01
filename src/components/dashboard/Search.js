@@ -1,21 +1,23 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 
 class Search extends Component {
-  handleChange = (e) => {
-    this.props.onChange(e.target.value);
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.props.onSubmit(this.textInput.value);
+    this.props.history.push('/');
   };
   render() {
     return (
       <div className="container search lighten-1 no-shadow">
         <div className="nav-wrapper">
-          <form>
+          <form onSubmit={this.handleSubmit}>
             <div className="input-field">
               <input
                 className="transparent"
                 id="search"
                 type="search"
-                required
-                onChange={this.handleChange}
+                ref={(input) => (this.textInput = input)}
                 placeholder="Search auction..."
               />
               <label className="label-icon" htmlFor="search">
@@ -30,4 +32,4 @@ class Search extends Component {
   }
 }
 
-export default Search;
+export default withRouter(Search);

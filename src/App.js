@@ -20,18 +20,12 @@ class App extends Component {
       });
     });
   }
-  handleChange = (val) => {
+  handleSearch = (val) => {
     console.log(val);
-    let currentList = this.state.auctions;
-    let newList = [];
 
-    if (val !== '' && val !== undefined) {
-      newList = currentList.filter((auction) =>
-        auction.Titel.toLowerCase().includes(val)
-      );
-    } else {
-      newList = currentList;
-    }
+    const newList = this.state.auctions.filter((auction) =>
+      auction.Titel.toLowerCase().includes(val)
+    );
 
     this.setState({
       filtered: newList
@@ -43,7 +37,7 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <Navbar />
-          <Search onChange={this.handleChange} />
+          <Search onSubmit={this.handleSearch} />
         </div>
         <Switch>
           <Route
