@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import WebAPI from '../API/WebAPI';
+import {createAuction} from '../API/WebAPI';
 
 //EJ KLAR
 
@@ -16,8 +16,8 @@ export default class CreateAuction extends Component{
         event.preventDefault();
         const data = new FormData(event.target);
 
-        //Tog bara en länk for now
-        fetch(WebAPI, {
+        //Fixa klart post metoden
+        fetch(createAuction, {
             method: 'POST',
             body: data,
             // method: 'POST',
