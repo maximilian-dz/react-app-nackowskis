@@ -4,12 +4,12 @@ import React,{Component} from 'react';
 export default class CreateAuction extends Component{
 
     state = {
-        title: undefined,
-        beskrivning: undefined,
-        startDatum: undefined,
-        slutDatum: undefined,
-        utropspris: undefined,
-        skapadAv: undefined
+        Title: undefined,
+        Beskrivning: undefined,
+        StartDatum: undefined,
+        SlutDatum: undefined,
+        Utropspris: undefined,
+        SkapadAv: undefined
     }
 
     handleSubmit = (e) =>{
@@ -19,13 +19,7 @@ export default class CreateAuction extends Component{
 
     onChange = (e) => {
         this.setState({
-            [e.target.title]: e.target.value,
-            [e.target.beskrivning]: e.target.value,
-            [e.target.startDatum]: e.target.value,
-            [e.target.startDatum]: e.target.value,
-            [e.target.slutDatum]: e.target.value,
-            [e.target.utropspris]: e.target.value,
-            [e.target.skapadAv]: e.target.value
+            [e.target.name]: e.target.value
         });
     }
     
