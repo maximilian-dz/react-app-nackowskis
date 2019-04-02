@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { getAuction, updateAuction } from '../API/WebAPI'
+import { getAuction, updateAuction, deleteAuction } from '../API/WebAPI'
 
 export default class AuctionDetails extends Component {
     constructor(props) {
@@ -31,6 +31,7 @@ export default class AuctionDetails extends Component {
                         <label className="active" htmlFor="description">Description</label>
                     </div>
                     <button onClick={this.save}>Save</button>
+                    <button onClick={this.delete}>Delete</button>
                     <button onClick={this.cancel}>Cancel</button>
                 </div>
             }
@@ -41,7 +42,6 @@ export default class AuctionDetails extends Component {
                     <button onClick={this.edit}>Edit</button>
                 </div>
             }
-
         }
         return null
     }
@@ -57,5 +57,11 @@ export default class AuctionDetails extends Component {
         this.setState({ auction : updatedAuction})
         updateAuction(this.state.auction.Gruppkod, this.state.id, this.state.auction)
         this.props.onChange(updatedAuction)
+    }
+
+    delete = () => {
+        deleteAuction(this.state.auction.Gruppkod, this.state.id)
+        this.setState({auction : null})
+        this.render()
     }
 }
