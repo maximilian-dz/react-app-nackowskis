@@ -22,14 +22,14 @@ export default class CreateAuction extends Component {
     })
   }
 
-  
+
 
   render() {
     return (
       <div className="container">
         <div className="row">
           <form className="col s12" onSubmit={this.handleSubmit}>
-            <div className="input-field white">
+            <div className="input-field">
               <label htmlFor="Title">Title </label>
               <input
                 id="Titel"
@@ -39,7 +39,7 @@ export default class CreateAuction extends Component {
               />
             </div>
 
-            <div className="input-field white">
+            <div className="input-field">
               <label htmlFor="Beskrivning">Description </label>
               <input
                 id="Beskrivning"
@@ -49,7 +49,7 @@ export default class CreateAuction extends Component {
               />
             </div>
 
-            <div className="input-field white">
+            <div className="input-field">
               <label htmlFor="StartDatum">Start Date </label>
               <input
                 id="StartDatum"
@@ -59,7 +59,7 @@ export default class CreateAuction extends Component {
               />
             </div>
 
-            <div className="input-field white">
+            <div className="input-field">
               <label htmlFor="SlutDatum">End Date </label>
               <input
                 id="SlutDatum"
@@ -69,7 +69,7 @@ export default class CreateAuction extends Component {
               />
             </div>
 
-            <div className="input-field white">
+            <div className="input-field">
               <label htmlFor="Price">Starting Price </label>
               <input
                 id="Utropspris"
@@ -79,7 +79,7 @@ export default class CreateAuction extends Component {
               />
             </div>
 
-            <div className="input-field white">
+            <div className="input-field">
               <label htmlFor="Beskrivning">Created by </label>
               <input
                 id="SkapadAv"
