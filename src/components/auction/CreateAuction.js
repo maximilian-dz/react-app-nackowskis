@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 //import {createAuction} from '../API/WebAPI';
 
 export default class CreateAuction extends Component {
@@ -21,8 +21,6 @@ export default class CreateAuction extends Component {
       [e.target.name]: e.target.value
     })
   }
-
-
 
   render() {
     return (
@@ -52,9 +50,10 @@ export default class CreateAuction extends Component {
             <div className="input-field">
               <label htmlFor="StartDatum">Start Date </label>
               <input
+                type="date"
+                className="datepicker"
                 id="StartDatum"
                 name="StartDatum"
-                type="date"
                 onChange={this.handleChange}
               />
             </div>
@@ -62,9 +61,10 @@ export default class CreateAuction extends Component {
             <div className="input-field">
               <label htmlFor="SlutDatum">End Date </label>
               <input
+                type="date"
+                className="datepicker"
                 id="SlutDatum"
                 name="SlutDatum"
-                type="date"
                 onChange={this.handleChange}
               />
             </div>
