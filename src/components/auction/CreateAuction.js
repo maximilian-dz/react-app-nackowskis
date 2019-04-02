@@ -22,59 +22,77 @@ export default class CreateAuction extends Component {
     })
   }
 
+  
+
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label htmlFor="Title">Title: </label>
-        <input
-          id="Titel"
-          name="Titel"
-          type="text"
-          onChange={this.handleChange}
-        />
+      <div className="container">
+        <div className="row">
+          <form className="col s12" onSubmit={this.handleSubmit}>
+            <div className="input-field white">
+              <label htmlFor="Title">Title </label>
+              <input
+                id="Titel"
+                name="Titel"
+                type="text"
+                onChange={this.handleChange}
+              />
+            </div>
 
-        <label htmlFor="Beskrivning">Description: </label>
-        <input
-          id="Beskrivning"
-          name="Beskrivning"
-          type="text"
-          onChange={this.handleChange}
-        />
+            <div className="input-field white">
+              <label htmlFor="Beskrivning">Description </label>
+              <input
+                id="Beskrivning"
+                name="Beskrivning"
+                type="text"
+                onChange={this.handleChange}
+              />
+            </div>
 
-        <label htmlFor="StartDatum">Start Date: </label>
-        <input
-          id="StartDatum"
-          name="StartDatum"
-          type="date"
-          onChange={this.handleChange}
-        />
+            <div className="input-field white">
+              <label htmlFor="StartDatum">Start Date </label>
+              <input
+                id="StartDatum"
+                name="StartDatum"
+                type="date"
+                onChange={this.handleChange}
+              />
+            </div>
 
-        <label htmlFor="SlutDatum">End Date: </label>
-        <input
-          id="SlutDatum"
-          name="SlutDatum"
-          type="date"
-          onChange={this.handleChange}
-        />
+            <div className="input-field white">
+              <label htmlFor="SlutDatum">End Date </label>
+              <input
+                id="SlutDatum"
+                name="SlutDatum"
+                type="date"
+                onChange={this.handleChange}
+              />
+            </div>
 
-        <label htmlFor="Price">Starting Price: </label>
-        <input
-          id="Utropspris"
-          name="Utropspris"
-          type="number"
-          onChange={this.handleChange}
-        />
+            <div className="input-field white">
+              <label htmlFor="Price">Starting Price </label>
+              <input
+                id="Utropspris"
+                name="Utropspris"
+                type="number"
+                onChange={this.handleChange}
+              />
+            </div>
 
-        <label htmlFor="Beskrivning">Created by: </label>
-        <input
-          id="SkapadAv"
-          name="SkapadAv"
-          type="text"
-          onChange={this.handleChange}
-        />
+            <div className="input-field white">
+              <label htmlFor="Beskrivning">Created by </label>
+              <input
+                id="SkapadAv"
+                name="SkapadAv"
+                type="text"
+                onChange={this.handleChange}
+              />
+            </div>
 
-        <button>Save Auction</button>
-      </form>
+            <button className="btn btn:hover">Save Auction</button>
+          </form>
+        </div>
+      </div>
     )
   }
 }
