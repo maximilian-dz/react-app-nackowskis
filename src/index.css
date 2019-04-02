@@ -46,3 +46,11 @@ input {
 label {
   color: white;
 }
+
+.input-field label{
+  color: #000;
+}
+
+.input-field{
+  border-radius: 5px;
+}
