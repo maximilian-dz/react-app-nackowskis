@@ -10,7 +10,6 @@ export default class AuctionDetails extends Component {
             auction: null,
             isEditing: false
         }
-        this.update = this.update.bind(this)
     }
 
     componentWillMount() {
