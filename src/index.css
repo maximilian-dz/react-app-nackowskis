@@ -99,4 +99,7 @@ label {
   /* box-shadow: 0 1px 0 0 #000 !important; */
 }
 
-
+.current-bid
+{
+  text-align: center;
+}

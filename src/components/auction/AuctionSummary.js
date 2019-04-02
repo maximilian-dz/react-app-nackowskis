@@ -41,7 +41,7 @@ class AuctionSummary extends Component {
                             <div className="card blue-grey darken-1">
                                 <div className="card-content white-text">
                                     <span className="card-title">{auction.Titel}</span>
-                                    {/* <h5>{auction.Utropspris}</h5> */}
+                                    <h5 className="current-bid">Nuvarande bud: {auction.Utropspris}</h5>
                                     <br />
                                     <p className="auctions-dates">{auction.StartDatum} &nbsp; -  {auction.SlutDatum}</p>
                                 </div>
