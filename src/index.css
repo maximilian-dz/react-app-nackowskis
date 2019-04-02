@@ -40,3 +40,9 @@ body {
 .btn:hover {
   background-color: rgba(73, 72, 72, 0.8);
 }
+input {
+  color: white;
+}
+label {
+  color: white;
+}

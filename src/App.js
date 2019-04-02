@@ -6,7 +6,7 @@ import AuctionDetails from './components/auction/AuctionDetails'
 import Search from './components/dashboard/Search'
 import { getAllAuctions } from './components/API/WebAPI'
 import CreateAuction from './components/auction/CreateAuction'
-import AuctionBids from './components/auction/AuctionBids'
+import BidList from './components/bid/BidList'
 import { createAuction } from './components/API/WebAPI'
 
 class App extends Component {
@@ -81,7 +81,7 @@ class App extends Component {
               />
             )}
           />
-          <Route path="/bids" component={AuctionBids} />
+          <Route path="/bids" component={BidList} />
         </Switch>
       </BrowserRouter>
     )
