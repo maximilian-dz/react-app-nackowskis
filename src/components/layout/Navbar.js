@@ -1,11 +1,14 @@
-import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { Component } from 'react'
+import { NavLink } from 'react-router-dom'
 
 export default class NavBar extends Component {
   render() {
     return (
       <div className="container">
         <nav className="no-shadow">
+          <NavLink to="/" className="brand-logo font-bold">
+            nackowskis
+          </NavLink>
           <ul className="right">
             <li>
               <NavLink to="/">Home</NavLink>
@@ -16,6 +19,6 @@ export default class NavBar extends Component {
           </ul>
         </nav>
       </div>
-    );
+    )
   }
 }

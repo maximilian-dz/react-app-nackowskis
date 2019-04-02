@@ -5,12 +5,17 @@ const PlaceBid = (props) => {
     <form className="col s12">
       <div className="row flexbox no-margin">
         <div className="input-field col">
-          <input id="bid" type="text" className="validate center" />
+          <input id="name" type="text" className="validate center" required />
+          <label htmlFor="name">Enter your name</label>
+        </div>
+
+        <div className="input-field col">
+          <input id="bid" type="text" className="validate center" required />
           <label htmlFor="bid">Enter your bid</label>
         </div>
         <div className="input-field col">
           <button className="btn waves-effect waves-light" type="submit">
-            Place Bid!
+            let's go
           </button>
         </div>
       </div>

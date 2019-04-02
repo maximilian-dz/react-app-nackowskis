@@ -23,9 +23,9 @@ export class BidList extends Component {
     const bidList = bids.map((bid) => {
       return (
         <div className="container" key={bid.BudID}>
-          <div className="row center">
+          <div className="center">
             <div className="col s12 m12">
-              <div className="bid-list section">
+              <div className="bid-list section no-padding-bottom ">
                 <BidSummary bid={bid} />
               </div>
             </div>
@@ -38,9 +38,11 @@ export class BidList extends Component {
       <React.Fragment>
         <div className="row">
           <PlaceBid />
-          <h5 className="center no-margin">Bidding History</h5>
         </div>
-        {bidList}
+        <h5 className="center no-margin text-light">Bidding History</h5>
+        <div className="container">
+          <ul className="collection with-header no-border">{bidList}</ul>
+        </div>
       </React.Fragment>
     )
   }

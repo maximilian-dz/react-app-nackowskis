@@ -25,6 +25,12 @@ body {
 .no-shadow {
   box-shadow: none;
 }
+.no-border {
+  border: none;
+}
+.no-padding-bottom {
+  padding-bottom: 0;
+}
 .flexbox {
   display: flex;
   justify-content: center;
@@ -41,38 +47,32 @@ body {
   background-color: rgba(73, 72, 72, 0.8);
 }
 
-.limited-width
-{
+.limited-width {
   width: 74%;
   margin-left: 13%;
   margin-top: 3%;
 }
 
-.dashboard-title
-{
+.dashboard-title {
   color: white;
   text-align: center;
   margin-top: 5%;
   font-size: 350%;
 }
 
-.card-panel-hoverable
-{
+.card-panel-hoverable {
   background-color: transparent;
 }
 
-.auctions-dates
-{
+.auctions-dates {
   text-align: center;
 }
 
-.card-title
-{
+.card-title {
   text-align: center;
 }
 
-.card-description
-{
+.card-description {
   text-align: center;
 }
 
@@ -83,7 +83,7 @@ label {
   color: white;
 }
 
-.input-field label{
+.input-field label {
   color: #000;
 }
 
@@ -99,7 +99,19 @@ label {
   /* box-shadow: 0 1px 0 0 #000 !important; */
 }
 
-.current-bid
-{
+.current-bid {
   text-align: center;
+}
+
+.font-bold {
+  font-weight: 600;
+}
+
+.test-class {
+  position: absolute;
+  right: 0;
+  margin-right: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  color: darkgreen;
 }
