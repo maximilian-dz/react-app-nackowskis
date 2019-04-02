@@ -6,7 +6,8 @@ export default class AuctionDetails extends Component {
         super(props)
 
         this.state = {
-            id: this.props.match.params.AuktionID,
+            id: this.props.match.params.AuctionID,
+            // group: this.props.match.params.GroupID,
             auction: null,
             isEditing: false
         }
