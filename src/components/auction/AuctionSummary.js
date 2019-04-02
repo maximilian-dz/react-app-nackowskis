@@ -21,26 +21,38 @@ class AuctionSummary extends Component {
     // }
 
     render() {
-        
-        const {auction} = this.props
-        if(!auction){return null}
-        return (
-            <div className="App">
-                <div className="limited-width">
-                    <div className="col s12 m6">
-                        <div className="card blue-grey darken-1">
-                            <div className="card-content white-text">
-                                <span className="card-title">{auction.Titel}</span>
-                                <p className="card-description">{auction.Beskrivning}</p>
-                                {/* <h5>{auction.currentbid}</h5> */}
-                                <br />
-                                <p className="auctions-dates">{auction.StartDatum} &nbsp; -  {auction.SlutDatum}</p>
+        const { auction } = this.props
+        console.log(auction)
+
+        var date = new Date()
+        var day = date.getDate()
+        var month = date.getMonth() + 1
+        var year = date.getFullYear()
+        var currentDate = year + "-" + month + "-" + day;
+
+        if (auction.SlutDatum < currentDate) {
+            return null
+        }
+
+        else {
+            if (!auction) { return null }
+            return (
+                <div className="App">
+                    <div className="limited-width">
+                        <div className="col s12 m6">
+                            <div className="card blue-grey darken-1">
+                                <div className="card-content white-text">
+                                    <span className="card-title">{auction.Titel}</span>
+                                    {/* <h5>{auction.Utropspris}</h5> */}
+                                    <br />
+                                    <p className="auctions-dates">{auction.StartDatum} &nbsp; -  {auction.SlutDatum}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        )
+            )
+        }
     }
 }
 
