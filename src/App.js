@@ -42,6 +42,15 @@ class App extends Component {
       .then((data) => console.log(data))
   }
 
+  updateAuctions = (updatedAuction) => {
+    let index = this.state.auctions.findIndex((auction) => {
+      return auction.AuktionID === updatedAuction.AuktionID
+    })
+    let auctions = this.state.auctions
+    auctions[index] = updatedAuction
+    this.setState({auctions : auctions})
+  }
+
   render() {
     return (
       <BrowserRouter>
@@ -68,6 +77,7 @@ class App extends Component {
                 {...props}
                 isAuthed={true}
                 auctions={this.state.auctions}
+                onChange={this.updateAuctions}
               />
             )}
           />

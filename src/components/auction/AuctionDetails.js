@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
-import { getAuction } from '../API/WebAPI'
+import { getAuction, updateAuction, deleteAuction } from '../API/WebAPI'
 
 export default class AuctionDetails extends Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            id: this.props.match.params.AuktionID,
+            id: this.props.match.params.AuctionID,
+            // group: this.props.match.params.GroupID,
             auction: null,
             isEditing: false
         }
@@ -24,13 +25,14 @@ export default class AuctionDetails extends Component {
                 return <div>
                     <div className="input-field">
                         <input id="title" type="text" defaultValue={this.state.auction.Titel} />
-                        <label className="active" for="title">Title</label>
+                        <label className="active" htmlFor="title">Title</label>
                     </div>
                     <div className="input-field">
                         <textarea className="materialize-textarea" id="description" defaultValue={this.state.auction.Beskrivning}></textarea>
-                        <label className="active" for="description">Description</label>
+                        <label className="active" htmlFor="description">Description</label>
                     </div>
                     <button onClick={this.save}>Save</button>
+                    <button onClick={this.delete}>Delete</button>
                     <button onClick={this.cancel}>Cancel</button>
                 </div>
             }
@@ -41,7 +43,6 @@ export default class AuctionDetails extends Component {
                     <button onClick={this.edit}>Edit</button>
                 </div>
             }
-
         }
         return null
     }
@@ -50,7 +51,18 @@ export default class AuctionDetails extends Component {
 
     cancel = () => { this.setState({ isEditing: false }) }
 
-    save() {
-        alert('TODO: Save!')
+    save = () => {
+        let updatedAuction = this.state.auction
+        updatedAuction["Titel"] = document.getElementById("title").value
+        updatedAuction["Beskrivning"] = document.getElementById("description").value
+        this.setState({ auction : updatedAuction})
+        updateAuction(this.state.auction.Gruppkod, this.state.id, this.state.auction)
+        this.props.onChange(updatedAuction)
+    }
+
+    delete = () => {
+        deleteAuction(this.state.auction.Gruppkod, this.state.id)
+        this.setState({auction : null})
+        this.render()
     }
 }
