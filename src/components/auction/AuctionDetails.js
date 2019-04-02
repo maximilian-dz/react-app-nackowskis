@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { getAuction } from '../API/WebAPI'
+import { getAuction, updateAuction } from '../API/WebAPI'
 
 export default class AuctionDetails extends Component {
     constructor(props) {
@@ -24,11 +24,11 @@ export default class AuctionDetails extends Component {
                 return <div>
                     <div className="input-field">
                         <input id="title" type="text" defaultValue={this.state.auction.Titel} />
-                        <label className="active" for="title">Title</label>
+                        <label className="active" htmlFor="title">Title</label>
                     </div>
                     <div className="input-field">
                         <textarea className="materialize-textarea" id="description" defaultValue={this.state.auction.Beskrivning}></textarea>
-                        <label className="active" for="description">Description</label>
+                        <label className="active" htmlFor="description">Description</label>
                     </div>
                     <button onClick={this.save}>Save</button>
                     <button onClick={this.cancel}>Cancel</button>
@@ -50,7 +50,12 @@ export default class AuctionDetails extends Component {
 
     cancel = () => { this.setState({ isEditing: false }) }
 
-    save() {
-        alert('TODO: Save!')
+    save = () => {
+        let updatedAuction = this.state.auction
+        updatedAuction["Titel"] = document.getElementById("title").value
+        updatedAuction["Beskrivning"] = document.getElementById("description").value
+        this.setState({ auction : updatedAuction})
+        updateAuction(this.state.auction.Gruppkod, this.state.id, this.state.auction)
+        this.props.onChange(updatedAuction)
     }
 }
