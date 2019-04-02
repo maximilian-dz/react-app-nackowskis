@@ -18,21 +18,29 @@ export class BidList extends Component {
     if (!this.state.bids) {
       return null
     }
+    const { bids } = this.state
+
+    const bidList = bids.map((bid) => {
+      return (
+        <div className="container" key={bid.BudID}>
+          <div className="row center">
+            <div className="col s12 m12">
+              <div className="bid-list section">
+                <BidSummary bid={bid} />
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    })
+
     return (
       <React.Fragment>
         <div className="row">
           <PlaceBid />
           <h5 className="center no-margin">Bidding History</h5>
         </div>
-        <div className="container">
-          <div className="row center">
-            <div className="col s12 m12">
-              <div className="bid-list section">
-                <BidSummary bids={this.state.bids} />
-              </div>
-            </div>
-          </div>
-        </div>
+        {bidList}
       </React.Fragment>
     )
   }

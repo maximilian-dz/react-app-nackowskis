@@ -1,15 +1,15 @@
 import React from 'react'
 
-const BidSummary = ({ bids }) => {
-  console.log(bids)
-  return bids && bids.length !== 0 ? (
+const BidSummary = ({ bid }) => {
+  console.log(bid)
+  return bid && bid !== undefined ? (
     <div className="card z-depth-0">
       <div className="card-content">
-        <span className="card-title">{bids[0].Summa} SEK</span>
+        <span className="card-title">{bid.Summa} SEK</span>
         <p />
       </div>
       <div className="card-action grey lighten-4 grey-text">
-        <div>Budgivare: {bids[0].Budgivare}</div>
+        <div>Budgivare: {bid.Budgivare}</div>
       </div>
     </div>
   ) : null
