@@ -76,3 +76,9 @@ body {
   text-align: center;
 }
 
+input {
+  color: white;
+}
+label {
+  color: white;
+}
