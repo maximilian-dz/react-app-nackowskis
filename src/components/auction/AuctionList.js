@@ -11,7 +11,6 @@ class AuctionList extends Component {
     const data = getBids('7', id).then((data) => {
       return data
     })
-
     return data
   }
 

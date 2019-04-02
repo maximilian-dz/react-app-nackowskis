@@ -23,7 +23,6 @@ class AuctionSummary extends Component {
     if (!auction) {
       return null
     }
-    console.log()
     return (
       <div className="App">
         <div className="limited-width">

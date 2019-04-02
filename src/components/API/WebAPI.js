@@ -32,24 +32,36 @@ export function createAuction(group, auction) {
 }
 
 export function updateAuction(group, auctionId, auction) {
-  return fetch('http://nackowskis.azurewebsites.net/api/Auktion/' + group + '/' + auctionId, {
-    method: 'PUT',
-    body: JSON.stringify(auction),
-    headers: {
-      Accept: 'application/json, text/plain, */*',
-      'Content-Type': 'application/json'
+  return fetch(
+    'http://nackowskis.azurewebsites.net/api/Auktion/' +
+      group +
+      '/' +
+      auctionId,
+    {
+      method: 'PUT',
+      body: JSON.stringify(auction),
+      headers: {
+        Accept: 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      }
     }
-  })
+  )
 }
 
 export function deleteAuction(group, auctionId) {
-  return fetch('http://nackowskis.azurewebsites.net/api/Auktion/' + group + '/' + auctionId, {
-    method: 'DELETE',
-    headers: {
-      Accept: 'application/json, text/plain, */*',
-      'Content-Type': 'application/json'
+  return fetch(
+    'http://nackowskis.azurewebsites.net/api/Auktion/' +
+      group +
+      '/' +
+      auctionId,
+    {
+      method: 'DELETE',
+      headers: {
+        Accept: 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      }
     }
-  })
+  )
 }
 
 export function placeBid() {}
