@@ -30,7 +30,7 @@ export default class AuctionDetails extends Component {
                         <textarea className="materialize-textarea" id="description" defaultValue={this.state.auction.Beskrivning}></textarea>
                         <label className="active" for="description">Description</label>
                     </div>
-                    <button onClick={this.update}>Save</button>
+                    <button onClick={this.save}>Save</button>
                     <button onClick={this.cancel}>Cancel</button>
                 </div>
             }
