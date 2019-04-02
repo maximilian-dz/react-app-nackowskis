@@ -64,4 +64,13 @@ export function deleteAuction(group, auctionId) {
   )
 }
 
-export function placeBid() {}
+export function placeBid(group, auctionId, bid) {
+  return fetch('http://nackowskis.azurewebsites.net/api/Bud/' + group + '/' + auctionId, {
+    method: 'POST',
+    body: JSON.stringify(bid),
+    headers: {
+      Accept: 'application/json, text/plain, */*',
+      'Content-Type': 'application/json'
+    }
+  })
+}

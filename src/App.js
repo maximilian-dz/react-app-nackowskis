@@ -15,7 +15,7 @@ class App extends Component {
     filtered: []
   }
   componentWillMount() {
-    getAllAuctions('7').then((res) => {
+    getAllAuctions('2020').then((res) => {
       this.setState({
         auctions: res,
         filtered: res
@@ -71,7 +71,7 @@ class App extends Component {
             )}
           />
           <Route
-            path="/auction/:AuktionID/"
+            path="/auction/:AuktionID"
             render={(props) => (
               <AuctionDetails
                 {...props}
