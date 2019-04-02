@@ -40,9 +40,53 @@ body {
 .btn:hover {
   background-color: rgba(73, 72, 72, 0.8);
 }
+
+.limited-width
+{
+  width: 74%;
+  margin-left: 13%;
+  margin-top: 3%;
+}
+
+.dashboard-title
+{
+  color: white;
+  text-align: center;
+  margin-top: 5%;
+  font-size: 350%;
+}
+
+.card-panel-hoverable
+{
+  background-color: transparent;
+}
+
+.auctions-dates
+{
+  text-align: center;
+}
+
+.card-title
+{
+  text-align: center;
+}
+
+.card-description
+{
+  text-align: center;
+}
+
 input {
   color: white;
 }
 label {
   color: white;
+}
+
+.input-field label{
+  color: #000;
+}
+
+.input-field{
+  border-radius: 5px;
 }
