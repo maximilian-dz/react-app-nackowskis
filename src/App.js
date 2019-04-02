@@ -71,7 +71,7 @@ class App extends Component {
             )}
           />
           <Route
-            path="/auction/:AuktionID/"
+            path="/auction/:AuktionID"
             render={(props) => (
               <AuctionDetails
                 {...props}

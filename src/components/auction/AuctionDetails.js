@@ -6,7 +6,7 @@ export default class AuctionDetails extends Component {
         super(props)
 
         this.state = {
-            id: this.props.match.params.AuctionID,
+            id: this.props.match.params.AuktionID,
             // group: this.props.match.params.GroupID,
             auction: null,
             isEditing: false
@@ -14,7 +14,7 @@ export default class AuctionDetails extends Component {
     }
 
     componentWillMount() {
-        getAuction(7, this.state.id).then((json) => {
+        getAuction(2020, this.state.id).then((json) => {
             this.setState({ auction: json })
         })
     }
