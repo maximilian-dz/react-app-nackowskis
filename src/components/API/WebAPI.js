@@ -31,7 +31,6 @@ export function createAuction(group, auction) {
   })
 }
 
-// WARNING! NOT TESTED YET
 export function updateAuction(group, auctionId, auction) {
   return fetch('http://nackowskis.azurewebsites.net/api/Auktion/' + group + '/' + auctionId, {
     method: 'PUT',
