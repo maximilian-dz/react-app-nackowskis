@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 //import {createAuction} from '../API/WebAPI';
 
 export default class CreateAuction extends Component {
@@ -9,18 +9,18 @@ export default class CreateAuction extends Component {
     SlutDatum: undefined,
     Utropspris: undefined,
     SkapadAv: undefined
-  };
+  }
 
   handleSubmit = (e) => {
-    e.preventDefault();
-    this.props.onSubmit(this.state);
-  };
+    e.preventDefault()
+    this.props.onSubmit(this.state)
+  }
 
   handleChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value
-    });
-  };
+    })
+  }
 
   render() {
     return (
@@ -75,6 +75,6 @@ export default class CreateAuction extends Component {
 
         <button>Save Auction</button>
       </form>
-    );
+    )
   }
 }

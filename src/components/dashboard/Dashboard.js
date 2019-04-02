@@ -1,5 +1,5 @@
-import React from 'react';
-import AuctionList from '../auction/AuctionList';
+import React from 'react'
+import AuctionList from '../auction/AuctionList'
 
 const Dashboard = ({ auctions }) => {
   return (
@@ -12,7 +12,7 @@ const Dashboard = ({ auctions }) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Dashboard;
+export default Dashboard

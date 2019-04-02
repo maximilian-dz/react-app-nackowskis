@@ -1,44 +1,46 @@
-import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Navbar from './components/layout/Navbar';
-import Dashboard from './components/dashboard/Dashboard';
-import AuctionDetails from './components/auction/AuctionDetails';
-import Search from './components/dashboard/Search';
-import { getAllAuctions } from './components/API/WebAPI';
-import CreateAuction from './components/auction/CreateAuction';
-import AuctionBids from './components/auction/AuctionBids';
-import { createAuction } from './components/API/WebAPI';
+import React, { Component } from 'react'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import Navbar from './components/layout/Navbar'
+import Dashboard from './components/dashboard/Dashboard'
+import AuctionDetails from './components/auction/AuctionDetails'
+import Search from './components/dashboard/Search'
+import { getAllAuctions } from './components/API/WebAPI'
+import CreateAuction from './components/auction/CreateAuction'
+import AuctionBids from './components/auction/AuctionBids'
+import { createAuction } from './components/API/WebAPI'
 
 class App extends Component {
   state = {
     auctions: [],
     filtered: []
-  };
+  }
   componentWillMount() {
     getAllAuctions('7').then((res) => {
       this.setState({
         auctions: res,
         filtered: res
-      });
-    });
+      })
+    })
   }
   handleSearch = (val) => {
-    console.log(val);
+    console.log(val)
 
     const newList = this.state.auctions.filter((auction) =>
       auction.Titel.toLowerCase().includes(val)
-    );
+    )
 
     this.setState({
       filtered: newList
-    });
-  };
+    })
+  }
 
   addAuction = (newAuction) => {
-    console.log(newAuction);
-    newAuction.Gruppkod = '2020';
-    createAuction('2020', newAuction).then((res) => console.log(res));
-  };
+    console.log(newAuction)
+    newAuction.Gruppkod = '2020'
+    createAuction('2020', newAuction)
+      .then((res) => res.json())
+      .then((data) => console.log(data))
+  }
 
   render() {
     return (
@@ -82,8 +84,8 @@ class App extends Component {
           <Route path="/bids" component={AuctionBids} />
         </Switch>
       </BrowserRouter>
-    );
+    )
   }
 }
 
-export default App;
+export default App

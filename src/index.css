@@ -25,3 +25,18 @@ body {
 .no-shadow {
   box-shadow: none;
 }
+.flexbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.no-margin {
+  margin: 0;
+}
+.btn {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.btn:hover {
+  background-color: rgba(73, 72, 72, 0.8);
+}

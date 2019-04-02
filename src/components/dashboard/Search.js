@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
+import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom'
 
 class Search extends Component {
   handleSubmit = (e) => {
-    e.preventDefault();
-    this.props.onSubmit(this.textInput.value);
-    this.props.history.push('/');
-  };
+    e.preventDefault()
+    this.props.onSubmit(this.textInput.value)
+    this.props.history.push('/')
+  }
   render() {
     return (
       <div className="container search lighten-1 no-shadow">
@@ -28,8 +28,8 @@ class Search extends Component {
           </form>
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default withRouter(Search);
+export default withRouter(Search)
