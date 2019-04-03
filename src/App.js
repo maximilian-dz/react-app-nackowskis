@@ -92,7 +92,6 @@ class App extends Component {
               />
             )}
           />
-          <Route path="/bids" component={BidList} />
         </Switch>
         <Footer />
       </BrowserRouter>
