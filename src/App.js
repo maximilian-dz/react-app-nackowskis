@@ -6,7 +6,6 @@ import AuctionDetails from './components/auction/AuctionDetails'
 import Search from './components/dashboard/Search'
 import { getAllAuctions } from './components/API/WebAPI'
 import CreateAuction from './components/auction/CreateAuction'
-import BidList from './components/bid/BidList'
 import { createAuction } from './components/API/WebAPI'
 import Footer from './components/layout/Footer'
 

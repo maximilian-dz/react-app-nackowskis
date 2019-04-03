@@ -2,9 +2,8 @@ import React, { Component } from 'react'
 
 class PlaceBid extends Component {
   state = {
-    errMsg: null,
-    bid: '',
-    name: ''
+    Summa: '',
+    Budgivare: ''
   }
   handleChange = (e) => {
     this.setState({
@@ -21,7 +20,7 @@ class PlaceBid extends Component {
         <div className="row flexbox no-margin">
           <div className="input-field col">
             <input
-              id="name"
+              id="Budgivare"
               type="text"
               className="validate center"
               required
@@ -32,7 +31,7 @@ class PlaceBid extends Component {
 
           <div className="input-field col">
             <input
-              id="bid"
+              id="Summa"
               type="text"
               className="validate center"
               required
