@@ -24,22 +24,11 @@ class App extends Component {
   }
 
   getFilteredAuctions = (auctions) => {
-    const date = new Date()
-    const year = date.getFullYear()
-    const month = date.getMonth() + 1
-    const day = date.getDate()
-    const hour = date.getHours()
-    const minute = date.getMinutes()
-    const second = date.getSeconds()
-    const currentDate =
-      year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second
-
-    console.log(currentDate)
+    const today = Date.now()
 
     const filteredList = auctions.filter(
-      (auction) => auction.SlutDatum > currentDate
+      (auction) => Date.parse(auction.SlutDatum) > today
     )
-    console.log(filteredList)
 
     return filteredList
   }

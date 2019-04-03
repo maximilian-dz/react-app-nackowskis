@@ -20,7 +20,6 @@ class AuctionSummary extends Component {
 
   render() {
     const { auction } = this.props
-
     return (
       <div className="App">
         <div className="limited-width">
