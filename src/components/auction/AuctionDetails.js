@@ -72,9 +72,9 @@ export default class AuctionDetails extends Component {
                 Description
               </label>
             </div>
-            <button onClick={this.save}>Save</button>
-            <button onClick={this.delete}>Delete</button>
-            <button onClick={this.cancel}>Cancel</button>
+            <button Class="btn waves-effect waves-light" onClick={this.save}>Save</button>
+            <button Class="btn waves-effect waves-light" onClick={this.delete}>Delete</button>
+            <button Class="btn waves-effect waves-light" onClick={this.cancel}>Cancel</button>
             <BidList auctionId={this.state.id} />
           </div>
         )
@@ -86,7 +86,7 @@ export default class AuctionDetails extends Component {
                 <div className="card">
                   <div className="card-image">
                     <img
-                      src="https://www.bankeauctions.com//public/uploads/news_blog/71a2599f7a03b610941015d20c8102bb.jpg"
+                      src="https://khsbicycles.com/wp-content/plugins/vslider/timthumb.php?src=http%3A%2F%2Fkhsbicycles.com%2Fwp-content%2Fuploads%2F2016%2F07%2Fkhs-bicycles-masthead-1000x300-fat-bike-tree.jpg&w=1000&h=300&zc=1&q=80"
                       alt="auction"
                     />
                     <a
