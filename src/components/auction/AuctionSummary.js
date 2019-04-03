@@ -20,7 +20,6 @@ class AuctionSummary extends Component {
 
   render() {
     const { auction } = this.props
-    console.log(auction)
 
     var date = new Date()
     var day = date.getDate()

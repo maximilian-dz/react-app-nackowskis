@@ -1,7 +1,6 @@
 import React from 'react'
 
 const BidSummary = ({ bid }) => {
-  console.log(bid)
   return bid && bid !== undefined ? (
     <li className="collection-item avatar valign-wrapper">
       <i className="material-icons circle black">person</i>
