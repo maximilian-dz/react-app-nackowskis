@@ -19,13 +19,16 @@ class App extends Component {
     getAllAuctions('2020').then((res) => {
 
       var date = new Date()
-        var day = date.getDate() + 1
-        var month = date.getMonth() + 1
-        var year = date.getFullYear()
-        var currentDate = year + '-' + month + '-' + day
+      var year = date.getFullYear()
+      var month = date.getMonth() + 1
+      var day = date.getDate()
+      var hour = date.getHours()
+      var minute = date.getMinutes()
+      var second = date.getSeconds()
+      var currentDate = year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second
 
-        const filteredList = [...res].filter((auction) =>
-      auction.SlutDatum > currentDate)
+      const filteredList = [...res].filter((auction) =>
+        auction.SlutDatum > currentDate)
 
       console.log(filteredList)
 

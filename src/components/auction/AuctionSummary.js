@@ -33,7 +33,7 @@ class AuctionSummary extends Component {
                                 </h5>
                                 <br />
                                 <p className="auctions-dates">
-                                    {auction.StartDatum} &nbsp; - {auction.SlutDatum}
+                                    {auction.StartDatum}&nbsp;- {auction.SlutDatum}
                                 </p>
                             </div>
                         </div>
