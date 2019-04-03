@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import AuctionSummary from './AuctionSummary.js'
+import AuctionSummary from './AuctionSummary'
 import { Link } from 'react-router-dom'
 import { getBids } from '../API/WebAPI'
 
