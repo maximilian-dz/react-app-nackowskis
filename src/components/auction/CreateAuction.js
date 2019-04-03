@@ -51,7 +51,7 @@ export default class CreateAuction extends Component {
             <div className="input-field">
               <label htmlFor="StartDatum">Start Date </label>
               <input
-                type="date"
+                type="text"
                 className="datepicker"
                 id="StartDatum"
                 name="StartDatum"
@@ -62,7 +62,7 @@ export default class CreateAuction extends Component {
             <div className="input-field">
               <label htmlFor="SlutDatum">End Date </label>
               <input
-                type="date"
+                type="text"
                 className="datepicker"
                 id="SlutDatum"
                 name="SlutDatum"
