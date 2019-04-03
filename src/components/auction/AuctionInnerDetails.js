@@ -37,6 +37,7 @@ export default class AuctionInnerDetails extends Component {
 
     delete = () => {
         deleteAuction(this.state.auction.Gruppkod, this.state.id)
+        this.props.delete(this.state.auction)
         this.setState({ auction: null })
     }
 
@@ -82,6 +83,7 @@ export default class AuctionInnerDetails extends Component {
                             {this.state.auction.Titel}
                         </span>
                         <p id="description">{this.state.auction.Beskrivning}</p>
+                        <p className="created-by">Created by: {this.state.auction.SkapadAv}</p>
                     </div>
                     <div className="card-action">
                         <button className="btn waves-effect waves-light" onClick={this.edit}>

@@ -21,8 +21,12 @@ export default class AuctionDetails extends Component {
         })
     }
 
-    save = (update) => {
-        this.props.onChange(update)
+    save = (auction) => {
+        this.props.onChange(auction)
+    }
+
+    delete = (auction) => {
+        this.props.deleteAuction(auction)
     }
 
     render() {
