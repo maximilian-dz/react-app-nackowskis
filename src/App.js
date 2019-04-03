@@ -32,6 +32,7 @@ class App extends Component {
 
     return filteredList
   }
+
   handleSearch = (val) => {
     const newList = this.state.auctions.filter((auction) =>
       auction.Titel.toLowerCase().includes(val)
@@ -65,6 +66,13 @@ class App extends Component {
     this.setState({ filtered: auctions })
   }
 
+  deleteAuction = (updatedAuction) => {
+    let auctions = this.state.filtered.filter((auction) => {
+      return auction.AuktionID !== updatedAuction.AuktionID
+    })
+    this.setState({ filtered: auctions })
+  }
+
   render() {
     return (
       <BrowserRouter>
@@ -92,6 +100,7 @@ class App extends Component {
                 isAuthed={true}
                 auctions={this.state.auctions}
                 onChange={this.updateAuctions}
+                deleteAuction={this.deleteAuction}
               />
             )}
           />
