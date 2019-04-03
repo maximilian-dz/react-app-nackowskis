@@ -88,8 +88,6 @@ export default class AuctionDetails extends Component {
                     <img
                       src="https://www.bankeauctions.com//public/uploads/news_blog/71a2599f7a03b610941015d20c8102bb.jpg"
                       alt="auction"
-                      width="300"
-                      height="500"
                     />
                     <a
                       href="https://www.google.com"
@@ -101,7 +99,7 @@ export default class AuctionDetails extends Component {
 
                   <div className="card-content">
                     <span className="card-title" id="title">
-                      <h3>{this.state.auction.Titel}</h3>
+                      {this.state.auction.Titel}
                     </span>
                     <p id="description">{this.state.auction.Beskrivning}</p>
                   </div>
