@@ -65,10 +65,10 @@ class App extends Component {
   }
 
   updateAuctions = (updatedAuction) => {
-    let index = this.state.auctions.findIndex((auction) => {
+    let index = this.state.filtered.findIndex((auction) => {
       return auction.AuktionID === updatedAuction.AuktionID
     })
-    let auctions = this.state.auctions
+    let auctions = this.state.filtered
     auctions[index] = updatedAuction
     this.setState({ filtered: auctions })
   }
