@@ -37,10 +37,27 @@ export default class AuctionDetails extends Component {
                 </div>
             }
             else {
-                return <div>
-                    <h3>{this.state.auction.Titel}</h3>
-                    <p id="description">{this.state.auction.Beskrivning}</p>
-                    <button onClick={this.edit}>Edit</button>
+                return <div className="container">
+                    <div className="row">
+                        <div className="col s12 16">
+                            <div className="card">
+                                <div className="card-image">
+                                    <img src="https://www.bankeauctions.com//public/uploads/news_blog/71a2599f7a03b610941015d20c8102bb.jpg" alt="auction" width="300" height="500" />
+                                    <a href="https://www.google.com" className="halfway-fab btn-floating red pulse">
+                                        <i className="material-icons">favorite</i>
+                                    </a>
+                                </div>
+                                
+                                <div className="card-content">
+                                    <span className="card-title" id="title"><h3>{this.state.auction.Titel}</h3></span>
+                                    <p id="description">{this.state.auction.Beskrivning}</p>
+                                </div>
+                                <div className="card-action">
+                                    <button className="btn btn:hover" onClick={this.edit}>Edit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             }
         }
@@ -55,14 +72,14 @@ export default class AuctionDetails extends Component {
         let updatedAuction = this.state.auction
         updatedAuction["Titel"] = document.getElementById("title").value
         updatedAuction["Beskrivning"] = document.getElementById("description").value
-        this.setState({ auction : updatedAuction})
+        this.setState({ auction: updatedAuction })
         updateAuction(this.state.auction.Gruppkod, this.state.id, this.state.auction)
         this.props.onChange(updatedAuction)
     }
 
     delete = () => {
         deleteAuction(this.state.auction.Gruppkod, this.state.id)
-        this.setState({auction : null})
+        this.setState({ auction: null })
         this.render()
     }
 }
