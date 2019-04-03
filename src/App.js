@@ -8,6 +8,7 @@ import { getAllAuctions } from './components/API/WebAPI'
 import CreateAuction from './components/auction/CreateAuction'
 import BidList from './components/bid/BidList'
 import { createAuction } from './components/API/WebAPI'
+import Footer from './components/layout/Footer'
 
 class App extends Component {
   state = {
@@ -60,7 +61,7 @@ class App extends Component {
     })
     let auctions = this.state.auctions
     auctions[index] = updatedAuction
-    this.setState({auctions : auctions})
+    this.setState({ auctions: auctions })
   }
 
   render() {
@@ -103,8 +104,8 @@ class App extends Component {
               />
             )}
           />
-          <Route path="/bids" component={BidList} />
         </Switch>
+        <Footer />
       </BrowserRouter>
     )
   }
