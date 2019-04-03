@@ -34,9 +34,12 @@ class App extends Component {
     const currentDate =
       year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second
 
+    console.log(currentDate)
+
     const filteredList = auctions.filter(
       (auction) => auction.SlutDatum > currentDate
     )
+    console.log(filteredList)
 
     return filteredList
   }

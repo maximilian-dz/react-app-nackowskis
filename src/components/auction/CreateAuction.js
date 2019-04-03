@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 //import {createAuction} from '../API/WebAPI';
 
 export default class CreateAuction extends Component {
@@ -14,6 +14,7 @@ export default class CreateAuction extends Component {
   handleSubmit = (e) => {
     e.preventDefault()
     this.props.onSubmit(this.state)
+    this.props.history.push('/')
   }
 
   handleChange = (e) => {
