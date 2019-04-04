@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import moment from 'moment'
+import M from 'materialize-css'
+import 'materialize-css/dist/css/materialize.min.css'
 
 export default class CreateAuction extends Component {
   constructor(props) {
@@ -7,41 +9,41 @@ export default class CreateAuction extends Component {
     this.state = {
       Titel: undefined,
       Beskrivning: undefined,
-      StartDatum: undefined,
+      StartDatum: moment().format('YYYY-MM-DDTHH:MM:SS'),
       SlutDatum: undefined,
       Utropspris: undefined,
-      SkapadAv: undefined,
-      date: moment().format('YYYY-MM-DD')
+      SkapadAv: undefined
     }
-    this.endDate = React.createRef()
+    this.datepicker = React.createRef()
   }
 
-  componentDidMount = () => {}
+  componentDidMount = () => {
+    const options = {
+      onSelect: this.handleDateChange,
+      autoClose: true
+    }
+    M.Datepicker.init(this.datepicker.current, options)
+  }
 
   handleSubmit = (e) => {
     e.preventDefault()
 
-    const node = this.endDate.current
-    const date = Date.parse(node.value)
-    const dateNow = moment().format('YYYY-MM-DDTHH:MM:SS')
-    const timeNow = moment().format('HH:MM:SS')
-    const endDate = moment(date).format('YYYY-MM-DDT') + timeNow
-
-    this.setState(
-      {
-        StartDatum: dateNow,
-        SlutDatum: endDate
-      },
-      () => {
-        this.props.onSubmit(this.state)
-        this.props.history.push('/')
-      }
-    )
+    this.props.onSubmit(this.state)
+    this.props.history.push('/')
   }
 
   handleChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value
+    })
+  }
+
+  handleDateChange = (date) => {
+    const timeNow = moment().format('HH:MM:SS')
+    const endDate = moment(date).format('YYYY-MM-DDT') + timeNow
+
+    this.setState({
+      SlutDatum: endDate
     })
   }
 
@@ -70,15 +72,15 @@ export default class CreateAuction extends Component {
               />
             </div>
 
-            <div className="input-field">
+            <div className="">
               <label htmlFor="StartDatum">Start Date </label>
               <input
+                className="black-border"
                 type="text"
                 id="StartDatum"
                 name="StartDatum"
-                value={this.state.date}
+                value={moment().format('YYYY-MM-DD')}
                 readOnly
-                placeholder="Start Date"
               />
             </div>
 
@@ -89,8 +91,7 @@ export default class CreateAuction extends Component {
                 className="datepicker"
                 id="SlutDatum"
                 name="SlutDatum"
-                onChange={this.handleChange}
-                ref={this.endDate}
+                ref={this.datepicker}
               />
             </div>
 

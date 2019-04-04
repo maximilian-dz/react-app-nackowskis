@@ -13,7 +13,7 @@ body {
   box-shadow: none;
 }
 .search {
-  padding: 0px 300px;
+  padding: 0px 300px !important;
 }
 .transparent {
   background-color: transparent;
@@ -26,10 +26,10 @@ body {
   box-shadow: none;
 }
 .no-border {
-  border: none;
+  border: none !important;
 }
 .no-padding-bottom {
-  padding-bottom: 0;
+  padding-bottom: 0 !important;
 }
 .flexbox {
   display: flex;
@@ -41,11 +41,11 @@ body {
   margin: 0;
 }
 .btn {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.8) !important;
   margin-right: 4px;
 }
 .btn:hover {
-  background-color: rgba(73, 72, 72, 0.8);
+  background-color: rgba(73, 72, 72, 0.8) !important;
 }
 
 .limited-width {
@@ -75,13 +75,6 @@ body {
 
 .card-description {
   text-align: center;
-}
-
-input {
-  color: white;
-}
-label {
-  color: white;
 }
 
 .input-field label {
@@ -134,11 +127,17 @@ footer {
   float: right;
 }
 .margin-bottom-50 {
-  margin-bottom: 50px;
+  margin-bottom: 50px !important;
 }
 .margin-top-50 {
-  margin-top: 50px;
+  margin-top: 50px !important;
 }
 .title {
   margin-top: -3%;
+}
+label {
+  color: white !important;
+}
+.black-border {
+  border-bottom: 1px solid black !important;
 }

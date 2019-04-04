@@ -9,7 +9,7 @@ class Search extends Component {
   }
   render() {
     return (
-      <div className="container search lighten-1 no-shadow">
+      <div className="container search lighten-1 no-shadow ">
         <div className="nav-wrapper">
           <form onSubmit={this.handleSubmit}>
             <div className="input-field">
