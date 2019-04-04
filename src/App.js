@@ -37,7 +37,7 @@ class App extends Component {
     const newList = this.state.auctions.filter((auction) =>
       auction.Titel.toLowerCase().includes(val)
     )
-
+    console.log(newList)
     this.setState({
       filtered: newList
     })

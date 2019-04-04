@@ -30,7 +30,13 @@
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         var elems = document.querySelectorAll('.datepicker')
-        var instances = M.Datepicker.init(elems)
+        const options = {
+          autoClose: true,
+          selectMonths: true, // Enable Month Selection
+          selectYears: 10, // Creates a dropdown of 10 years to control year,
+          onSet: this.handleChange
+        }
+        var instances = M.Datepicker.init(elems, options)
       })
     </script>
   </body>
