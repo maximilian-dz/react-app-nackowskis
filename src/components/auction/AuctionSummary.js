@@ -31,12 +31,11 @@ class AuctionSummary extends Component {
                   alt="auction-pic"
                 />
                 <div className="card-content">
-                  <h5>{auction.Titel}</h5>
+                  <h5 className="title">{auction.Titel}</h5>
                   <p>Nuvarande bud: {this.state.bid}</p>
                   <p>Utropspris: {auction.Utropspris}</p>
-                </div>
-                <div className="card-action">
-                  <p>Details</p>
+                  <p>Startdatum: {auction.StartDatum}</p>
+                  <p>Slutdatum: {auction.SlutDatum}</p>
                 </div>
               </div>
             </div>
