@@ -27,6 +27,7 @@ export default class AuctionDetails extends Component {
 
   delete = (auction) => {
     this.props.deleteAuction(auction)
+    this.props.history.push('/')
   }
 
   render() {
@@ -62,7 +63,6 @@ export default class AuctionDetails extends Component {
           {Date.parse(auction.SlutDatum) > Date.now() ? (
             <BidList auctionId={this.state.id} />
           ) : null}
-          {/* <BidList auctionId={this.state.id} /> */}
         </div>
       )
     }

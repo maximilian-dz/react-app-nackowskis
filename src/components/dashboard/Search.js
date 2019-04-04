@@ -14,7 +14,7 @@ class Search extends Component {
           <form onSubmit={this.handleSubmit}>
             <div className="input-field">
               <input
-                className="transparent"
+                className="transparent "
                 id="search"
                 type="search"
                 ref={(input) => (this.textInput = input)}

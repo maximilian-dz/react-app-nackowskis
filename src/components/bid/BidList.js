@@ -11,7 +11,6 @@ export class BidList extends Component {
   }
   componentWillMount() {
     const { auctionId } = this.props
-    console.log(auctionId)
 
     getBids('2020', auctionId).then((bids) => {
       this.setState({

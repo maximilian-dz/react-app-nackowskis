@@ -13,7 +13,7 @@ body {
   box-shadow: none;
 }
 .search {
-  padding: 0px 200px;
+  padding: 0px 300px;
 }
 .transparent {
   background-color: transparent;
@@ -130,6 +130,12 @@ footer {
   color: black;
 }
 
-.created-by{
+.created-by {
   float: right;
+}
+.margin-bottom-50 {
+  margin-bottom: 50px;
+}
+.margin-top-50 {
+  margin-top: 50px;
 }

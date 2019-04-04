@@ -1,20 +1,42 @@
 import React, { Component } from 'react'
-//import {createAuction} from '../API/WebAPI';
+import moment from 'moment'
 
 export default class CreateAuction extends Component {
-  state = {
-    Titel: undefined,
-    Beskrivning: undefined,
-    StartDatum: undefined,
-    SlutDatum: undefined,
-    Utropspris: undefined,
-    SkapadAv: undefined
+  constructor(props) {
+    super(props)
+    this.state = {
+      Titel: undefined,
+      Beskrivning: undefined,
+      StartDatum: undefined,
+      SlutDatum: undefined,
+      Utropspris: undefined,
+      SkapadAv: undefined,
+      date: moment().format('YYYY-MM-DD')
+    }
+    this.endDate = React.createRef()
   }
+
+  componentDidMount = () => {}
 
   handleSubmit = (e) => {
     e.preventDefault()
-    this.props.onSubmit(this.state)
-    this.props.history.push('/')
+
+    const node = this.endDate.current
+    const date = Date.parse(node.value)
+    const dateNow = moment().format('YYYY-MM-DDTHH:MM:SS')
+    const timeNow = moment().format('HH:MM:SS')
+    const endDate = moment(date).format('YYYY-MM-DDT') + timeNow
+
+    this.setState(
+      {
+        StartDatum: dateNow,
+        SlutDatum: endDate
+      },
+      () => {
+        this.props.onSubmit(this.state)
+        this.props.history.push('/')
+      }
+    )
   }
 
   handleChange = (e) => {
@@ -25,7 +47,7 @@ export default class CreateAuction extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="container margin-top-50">
         <div className="row">
           <form className="col s12" onSubmit={this.handleSubmit}>
             <div className="input-field">
@@ -52,10 +74,11 @@ export default class CreateAuction extends Component {
               <label htmlFor="StartDatum">Start Date </label>
               <input
                 type="text"
-                className="datepicker"
                 id="StartDatum"
                 name="StartDatum"
-                onChange={this.handleChange}
+                value={this.state.date}
+                readOnly
+                placeholder="Start Date"
               />
             </div>
 
@@ -67,6 +90,7 @@ export default class CreateAuction extends Component {
                 id="SlutDatum"
                 name="SlutDatum"
                 onChange={this.handleChange}
+                ref={this.endDate}
               />
             </div>
 
