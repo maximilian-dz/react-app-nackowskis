@@ -19,6 +19,7 @@ class PlaceBid extends Component {
       <form onSubmit={this.handleSubmit} className="col s12">
         <div className="row flexbox no-margin">
           <div className="input-field col">
+            <label htmlFor="Budgivare">Enter your name</label>
             <input
               id="Budgivare"
               type="text"
@@ -26,10 +27,10 @@ class PlaceBid extends Component {
               required
               onChange={this.handleChange}
             />
-            <label htmlFor="name">Enter your name</label>
           </div>
 
           <div className="input-field col">
+            <label htmlFor="Summa">Enter your bid</label>
             <input
               id="Summa"
               type="text"
@@ -37,7 +38,6 @@ class PlaceBid extends Component {
               required
               onChange={this.handleChange}
             />
-            <label htmlFor="bid">Enter your bid</label>
           </div>
           <div className="input-field col">
             <button className="btn waves-effect waves-light" type="submit">
