@@ -21,7 +21,7 @@ class AuctionSummary extends Component {
 
   render() {
     const { auction } = this.props
-    const startDate = moment(auction.StartDatum).format('ddd Do MMM, hh:mm')
+    const startDate = moment(auction.StartDatum).format('ddd Do MMM')
     const endDate = moment(auction.SlutDatum).format('ddd Do MMM, hh:mm')
     return (
       <div className="App">

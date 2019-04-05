@@ -29,7 +29,7 @@ export default class CreateAuction extends Component {
     e.preventDefault()
 
     this.setState({
-      SkapadAv: this.SkapadAv + "<img src='" + this.refs.img.value +  "'></img>"
+      SkapadAv: this.SkapadAv + "<img src='" + this.refs.img.value + "'></img>"
     })
 
     this.props.onSubmit(this.state)
@@ -43,7 +43,7 @@ export default class CreateAuction extends Component {
   }
 
   handleDateChange = (date) => {
-    const timeNow = moment().format('HH:MM:SS')
+    const timeNow = moment().format('hh:mm:ss')
     const endDate = moment(date).format('YYYY-MM-DDT') + timeNow
 
     this.setState({
@@ -112,8 +112,7 @@ export default class CreateAuction extends Component {
 
             <div className="input-field">
               <label>Add Picture</label>
-              <input type="text"
-              ref="img"/>
+              <input type="text" ref="img" />
             </div>
 
             <div className="input-field">
