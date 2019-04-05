@@ -11,9 +11,10 @@ import Footer from './components/layout/Footer'
 class App extends Component {
   state = {
     auctions: [],
-    filtered: []
+    filtered: [],
+    isSearch: false
   }
-  componentWillMount() {
+  componentDidMount() {
     getAllAuctions('2020').then((res) => {
       const filteredAuctions = this.getFilteredAuctions(res)
       this.setState({
@@ -39,7 +40,8 @@ class App extends Component {
     )
     console.log(newList)
     this.setState({
-      filtered: newList
+      filtered: newList,
+      isSearch: true
     })
   }
 
@@ -48,22 +50,26 @@ class App extends Component {
       const filteredAuctions = this.getFilteredAuctions(res)
       this.setState({
         auctions: res,
-        filtered: filteredAuctions
+        filtered: filteredAuctions,
+        isSearch: false
       })
     })
   }
 
   addAuction = (newAuction) => {
+    console.log(newAuction, 'Posten')
     newAuction.Gruppkod = '2020'
-    createAuction('2020', newAuction).then(() =>
-      getAllAuctions('2020').then((res) => {
-        const filteredAuctions = this.getFilteredAuctions(res)
-        this.setState({
-          auctions: res,
-          filtered: filteredAuctions
+    createAuction('2020', newAuction)
+      .then((res) => console.log(res))
+      .then(() =>
+        getAllAuctions('2020').then((res) => {
+          const filteredAuctions = this.getFilteredAuctions(res)
+          this.setState({
+            auctions: res,
+            filtered: filteredAuctions
+          })
         })
-      })
-    )
+      )
   }
 
   updateAuctions = (updatedAuction) => {
@@ -98,6 +104,7 @@ class App extends Component {
                 {...props}
                 isAuthed={true}
                 auctions={this.state.filtered}
+                isSearch={this.state.isSearch}
               />
             )}
           />

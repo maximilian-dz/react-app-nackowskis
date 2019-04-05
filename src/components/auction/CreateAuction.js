@@ -101,13 +101,13 @@ export default class CreateAuction extends Component {
               <input
                 id="Utropspris"
                 name="Utropspris"
-                type="number"
+                type="text"
                 onChange={this.handleChange}
               />
             </div>
 
             <div className="input-field">
-              <label htmlFor="Beskrivning">Created by </label>
+              <label htmlFor="SkapadAv">Created by </label>
               <input
                 id="SkapadAv"
                 name="SkapadAv"
