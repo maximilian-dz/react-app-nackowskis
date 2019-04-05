@@ -107,7 +107,7 @@ export default class CreateAuction extends Component {
             </div>
 
             <div className="input-field">
-              <label htmlFor="Beskrivning">Created by </label>
+              <label htmlFor="SkapadAv">Created by </label>
               <input
                 id="SkapadAv"
                 name="SkapadAv"

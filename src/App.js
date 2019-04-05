@@ -54,16 +54,19 @@ class App extends Component {
   }
 
   addAuction = (newAuction) => {
+    console.log(newAuction, 'Posten')
     newAuction.Gruppkod = '2020'
-    createAuction('2020', newAuction).then(() =>
-      getAllAuctions('2020').then((res) => {
-        const filteredAuctions = this.getFilteredAuctions(res)
-        this.setState({
-          auctions: res,
-          filtered: filteredAuctions
+    createAuction('2020', newAuction)
+      .then((res) => console.log(res))
+      .then(() =>
+        getAllAuctions('2020').then((res) => {
+          const filteredAuctions = this.getFilteredAuctions(res)
+          this.setState({
+            auctions: res,
+            filtered: filteredAuctions
+          })
         })
-      })
-    )
+      )
   }
 
   updateAuctions = (updatedAuction) => {
