@@ -58,14 +58,14 @@ export default class AuctionInnerDetails extends Component {
                         </label>
                     </div>
                     <div className="input-field">
-                        <textarea
-                            className="materialize-textarea"
+                        <input
+                            className="text-black"
                             id="description"
                             defaultValue={this.state.auction.Beskrivning}
                         />
                         <label className="active" htmlFor="description">
                             Description
-                    </label>
+                        </label>
                     </div>
                     <div className="card-action">
                         <button className="btn waves-effect waves-light" onClick={this.save}>Save</button>
