@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { getAuction } from '../API/WebAPI'
+import { getAuction, getBids } from '../API/WebAPI'
 import BidList from '../bid/BidList'
 import AuctionInnerDetails from '../auction/AuctionInnerDetails'
 
@@ -11,13 +11,24 @@ export default class AuctionDetails extends Component {
       id: this.props.match.params.AuktionID,
       // group: this.props.GroupId,
       auction: null,
-      isEditing: false
+      isEditing: false,
+      bids: []
     }
   }
 
   componentWillMount() {
-    getAuction(2020, this.state.id).then((json) => {
-      this.setState({ auction: json })
+    // getAuction(2020, this.state.id).then((json) => {
+    //   this.setState({ auction: json })
+    // })
+    const { id } = this.state
+
+    getAuction(2020, id).then((auction) => {
+      getBids(2020, id).then((bids) => {
+        this.setState({
+          bids,
+          auction
+        })
+      })
     })
   }
 
@@ -61,7 +72,7 @@ export default class AuctionDetails extends Component {
             </div>
           </div>
           {Date.parse(auction.SlutDatum) > Date.now() ? (
-            <BidList auctionId={this.state.id} />
+            <BidList auctionId={this.state.id} bids={this.state.bids} />
           ) : null}
         </div>
       )
