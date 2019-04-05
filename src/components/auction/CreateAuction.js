@@ -28,6 +28,10 @@ export default class CreateAuction extends Component {
   handleSubmit = (e) => {
     e.preventDefault()
 
+    this.setState({
+      SkapadAv: this.SkapadAv + "<img src='" + this.refs.img.value +  "'></img>"
+    })
+
     this.props.onSubmit(this.state)
     this.props.history.push('/')
   }
@@ -104,6 +108,12 @@ export default class CreateAuction extends Component {
                 type="text"
                 onChange={this.handleChange}
               />
+            </div>
+
+            <div className="input-field">
+              <label>Add Picture</label>
+              <input type="text"
+              ref="img"/>
             </div>
 
             <div className="input-field">
