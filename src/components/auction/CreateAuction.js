@@ -29,18 +29,25 @@ export default class CreateAuction extends Component {
     e.preventDefault()
 
     this.setState({
-      Beskrivning: this.Beskrivning + "<img src='" + this.refs.img.value +  "'></img>"
+      Beskrivning: "HEJ"
+      // this.state.Beskrivning + "<img src='" + this.refs.img.value +  "'></img>"
     })
-    console.log(this.refs.img.value);
 
     this.props.onSubmit(this.state)
     this.props.history.push('/')
   }
 
   handleChange = (e) => {
-    this.setState({
-      [e.target.name]: e.target.value
-    })
+    if(e.target.name === "Beskrivning" || e.target.name === "img"){
+      this.setState({
+        Beskrivning: this.refs.Beskrivning.value + "<img src='" + this.refs.img.value +  "'></img>",
+      })
+    }
+    else{
+      this.setState({
+        [e.target.name]: e.target.value
+      })
+    }
   }
 
   handleDateChange = (date) => {
@@ -73,6 +80,7 @@ export default class CreateAuction extends Component {
               <input
                 id="Beskrivning"
                 name="Beskrivning"
+                ref="Beskrivning"
                 type="text"
                 onChange={this.handleChange}
               />
@@ -114,7 +122,10 @@ export default class CreateAuction extends Component {
             <div className="input-field">
               <label>Add Picture</label>
               <input type="text"
-              ref="img"/>
+              ref="img"
+              id="img"
+              name="img"
+              onChange={this.handleChange}/>
             </div>
 
             <div className="input-field">
