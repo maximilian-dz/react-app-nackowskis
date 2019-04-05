@@ -1,17 +1,11 @@
 import React, { Component } from 'react'
+import moment from 'moment'
 
 class AuctionSummary extends Component {
   state = {
     bid: ''
   }
   componentDidMount = () => {
-    const { auction } = this.props
-    const moment = require('moment')
-    let startdatum = moment(auction.StartDatum).format('MMMM Do YYYY, h:mm:ss a')
-    let slutdatum = moment(auction.SlutDatum).format('MMMM Do YYYY, h:mm:ss a')
-    auction.SlutDatum = startdatum
-    auction.StartDatum = slutdatum
-    console.log(auction.SlutDatum)
     const { bids } = this.props
     if (bids) {
       bids.then((res) => {
@@ -23,13 +17,14 @@ class AuctionSummary extends Component {
         })
       })
     }
-
-}
+  }
 
   render() {
     const { auction } = this.props
+    const startDate = moment(auction.StartDatum).format('ddd Do MMM, hh:mm')
+    const endDate = moment(auction.SlutDatum).format('ddd Do MMM, hh:mm')
     return (
-        <div className="App">
+      <div className="App">
         <div className="limited-width">
           <div className="col s12 m5">
             <div className="card">
@@ -42,8 +37,8 @@ class AuctionSummary extends Component {
                   <h5 className="title">{auction.Titel}</h5>
                   <p>Nuvarande bud: {this.state.bid}</p>
                   <p>Utropspris: {auction.Utropspris}</p>
-                  <p>Startdatum: {auction.StartDatum}</p>
-                  <p>Slutdatum: {auction.SlutDatum}</p>
+                  <p>Startdatum: {startDate}</p>
+                  <p>Slutdatum: {endDate}</p>
                 </div>
               </div>
             </div>
