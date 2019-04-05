@@ -43,6 +43,16 @@ class App extends Component {
     })
   }
 
+  refreshDashboard = () => {
+    getAllAuctions('2020').then((res) => {
+      const filteredAuctions = this.getFilteredAuctions(res)
+      this.setState({
+        auctions: res,
+        filtered: filteredAuctions
+      })
+    })
+  }
+
   addAuction = (newAuction) => {
     newAuction.Gruppkod = '2020'
     createAuction('2020', newAuction).then(() =>
@@ -76,7 +86,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className="App">
-          <Navbar />
+          <Navbar onClick={this.refreshDashboard} />
           <Search onSubmit={this.handleSearch} />
         </div>
         <Switch>
