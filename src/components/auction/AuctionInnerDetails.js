@@ -9,7 +9,7 @@ export default class AuctionInnerDetails extends Component {
             id: this.props.id,
             auction: this.props.auction,
             isEditing: false,
-            endDate:  moment(this.props.auction.SlutDatum).format('MMMM Do YYYY, h:mm:ss a')
+            endDate:  moment(this.props.auction.SlutDatum).format('ddd Do MMM, hh:mm')
         }
     }
 
