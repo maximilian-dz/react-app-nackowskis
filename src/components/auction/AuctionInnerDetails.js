@@ -4,12 +4,12 @@ import { updateAuction, deleteAuction } from '../API/WebAPI'
 export default class AuctionInnerDetails extends Component {
     constructor(props) {
         super(props)
-
+        const moment = require('moment')
         this.state = {
             id: this.props.id,
-            // group: this.props.match.params.GroupID,
             auction: this.props.auction,
-            isEditing: false
+            isEditing: false,
+            endDate:  moment(this.props.auction.SlutDatum).format('MMMM Do YYYY, h:mm:ss a')
         }
     }
 
@@ -83,6 +83,7 @@ export default class AuctionInnerDetails extends Component {
                             {this.state.auction.Titel}
                         </span>
                         <p id="description">{this.state.auction.Beskrivning}</p>
+                        <p>Ends: {this.state.endDate}</p>
                         <p className="created-by">Created by: {this.state.auction.SkapadAv}</p>
                     </div>
                     <div className="card-action">
