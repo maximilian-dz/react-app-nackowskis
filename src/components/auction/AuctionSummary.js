@@ -5,6 +5,13 @@ class AuctionSummary extends Component {
     bid: ''
   }
   componentDidMount = () => {
+    const { auction } = this.props
+    const moment = require('moment')
+    let startdatum = moment(auction.StartDatum).format('MMMM Do YYYY, h:mm:ss a')
+    let slutdatum = moment(auction.SlutDatum).format('MMMM Do YYYY, h:mm:ss a')
+    auction.SlutDatum = startdatum
+    auction.StartDatum = slutdatum
+    console.log(auction.SlutDatum)
     const { bids } = this.props
     if (bids) {
       bids.then((res) => {
@@ -16,12 +23,13 @@ class AuctionSummary extends Component {
         })
       })
     }
-  }
+
+}
 
   render() {
     const { auction } = this.props
     return (
-      <div className="App">
+        <div className="App">
         <div className="limited-width">
           <div className="col s12 m5">
             <div className="card">
