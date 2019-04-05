@@ -17,6 +17,11 @@ export default class NavBar extends Component {
             nackowskis
           </NavLink>
           <ul className="right">
+          <li>
+            <NavLink>
+            <img className="react-icon" src="React.js_logo-512.png"></img>
+            </NavLink>
+          </li>
             <li>
               <NavLink to="/" onClick={this.handleClick}>
                 Home
