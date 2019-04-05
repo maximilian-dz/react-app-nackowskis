@@ -12,7 +12,7 @@ export default class CreateAuction extends Component {
       StartDatum: moment().format('YYYY-MM-DDTHH:MM:SS'),
       SlutDatum: undefined,
       Utropspris: undefined,
-      SkapadAv: undefined,
+      SkapadAv: undefined
     }
     this.datepicker = React.createRef()
   }
@@ -20,19 +20,13 @@ export default class CreateAuction extends Component {
   componentDidMount = () => {
     const options = {
       onSelect: this.handleDateChange,
-      autoClose: true,
+      autoClose: true
     }
     M.Datepicker.init(this.datepicker.current, options)
   }
 
   handleSubmit = (e) => {
     e.preventDefault()
-
-    this.setState({
-      Beskrivning: "HEJ"
-      // this.state.Beskrivning + "<img src='" + this.refs.img.value +  "'></img>"
-    })
-
     this.props.onSubmit(this.state)
     this.props.history.push('/')
   }
@@ -51,7 +45,7 @@ export default class CreateAuction extends Component {
   }
 
   handleDateChange = (date) => {
-    const timeNow = moment().format('HH:MM:SS')
+    const timeNow = moment().format('hh:mm:ss')
     const endDate = moment(date).format('YYYY-MM-DDT') + timeNow
 
     this.setState({
