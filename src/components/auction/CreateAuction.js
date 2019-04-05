@@ -50,7 +50,8 @@ export default class CreateAuction extends Component {
   render() {
     return (
       <div className="container margin-top-50">
-        <div className="row">
+        <div className="row create-auction">
+          <h5 className="center white-text">Add Auction</h5>
           <form className="col s12" onSubmit={this.handleSubmit}>
             <div className="input-field">
               <label htmlFor="Title">Title </label>

@@ -141,3 +141,6 @@ label {
 .black-border {
   border-bottom: 1px solid black !important;
 }
+.create-auction {
+  padding: 0px 200px;
+}
