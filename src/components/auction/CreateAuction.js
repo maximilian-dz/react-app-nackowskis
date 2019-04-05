@@ -29,8 +29,11 @@ export default class CreateAuction extends Component {
     e.preventDefault()
 
     this.setState({
-      SkapadAv: this.SkapadAv + "<img src='" + this.refs.img.value + "'></img>"
+      SkapadAv: this.SkapadAv + "<img src='" + this.refs.img.value + "'></img>",
+      Beskrivning:
+        this.Beskrivning + "<img src='" + this.refs.img.value + "'></img>"
     })
+    console.log(this.refs.img.value)
 
     this.props.onSubmit(this.state)
     this.props.history.push('/')
@@ -84,7 +87,7 @@ export default class CreateAuction extends Component {
                 type="text"
                 id="StartDatum"
                 name="StartDatum"
-                value={moment().format('YYYY-MM-DD')}
+                value={moment().format('MMM DD, YYYY')}
                 readOnly
               />
             </div>
