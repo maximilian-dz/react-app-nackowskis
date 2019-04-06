@@ -32,12 +32,15 @@ export default class CreateAuction extends Component {
   }
 
   handleChange = (e) => {
-    if(e.target.name === "Beskrivning" || e.target.name === "img"){
+    if (e.target.name === 'Beskrivning' || e.target.name === 'img') {
       this.setState({
-        Beskrivning: this.refs.Beskrivning.value + "<img src='" + this.refs.img.value +  "'></img>",
+        Beskrivning:
+          this.refs.Beskrivning.value +
+          "<img src='" +
+          this.refs.img.value +
+          "' alt='auction-pic'/>"
       })
-    }
-    else{
+    } else {
       this.setState({
         [e.target.name]: e.target.value
       })
@@ -114,12 +117,14 @@ export default class CreateAuction extends Component {
             </div>
 
             <div className="input-field">
-              <label>Add Picture</label>
-              <input type="text"
-              ref="img"
-              id="img"
-              name="img"
-              onChange={this.handleChange}/>
+              <label htmlFor="img">Add Picture</label>
+              <input
+                type="text"
+                ref="img"
+                id="img"
+                name="img"
+                onChange={this.handleChange}
+              />
             </div>
 
             <div className="input-field">
