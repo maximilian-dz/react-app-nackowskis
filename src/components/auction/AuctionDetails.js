@@ -77,7 +77,7 @@ export default class AuctionDetails extends Component {
             </div>
           </div>
           {Date.parse(auction.SlutDatum) > Date.now() ? (
-            <BidList auctionId={this.state.id} />
+            <BidList auctionId={this.state.id} bids={this.state.bids} />
           ) : null}
         </div>
       )
