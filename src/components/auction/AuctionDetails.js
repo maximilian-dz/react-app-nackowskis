@@ -9,17 +9,15 @@ export default class AuctionDetails extends Component {
 
     this.state = {
       id: this.props.match.params.AuktionID,
-      // group: this.props.GroupId,
       auction: null,
       isEditing: false,
-      bids: []
+      bids: [],
+      delError: null
+      // group: this.props.GroupId,
     }
   }
 
   componentWillMount() {
-    // getAuction(2020, this.state.id).then((json) => {
-    //   this.setState({ auction: json })
-    // })
     const { id } = this.state
 
     getAuction(2020, id).then((auction) => {
@@ -37,8 +35,15 @@ export default class AuctionDetails extends Component {
   }
 
   delete = (auction) => {
-    this.props.deleteAuction(auction)
-    this.props.history.push('/')
+    const { bids } = this.state
+    if (bids.length) {
+      this.setState({
+        delError: 'Auction has bids, cannot be deleted'
+      })
+    } else {
+      this.props.deleteAuction(auction)
+      this.props.history.push('/')
+    }
   }
 
   render() {
