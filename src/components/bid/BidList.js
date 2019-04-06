@@ -9,13 +9,11 @@ export class BidList extends Component {
     bids: [],
     msg: null
   }
-  componentWillMount() {
-    const { auctionId } = this.props
+  componentDidMount() {
+    const { bids } = this.props
 
-    getBids('2020', auctionId).then((bids) => {
-      this.setState({
-        bids
-      })
+    this.setState({
+      bids
     })
   }
   handleBid = (newBid) => {
