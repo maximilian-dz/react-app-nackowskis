@@ -29,9 +29,9 @@ class AuctionSummary extends Component {
     if (Date.parse(auction.SlutDatum) < Date.now()) {
       badge = 'Auction Ended'
     } else if (bid !== 0) {
-      badge = 'BID: ' + auction.Utropspris + ' SEK'
+      badge = 'BID: ' + this.state.bid + ' SEK'
     } else {
-      badge = 'ESTIMATE: ' + this.state.bid + ' SEK'
+      badge = 'ESTIMATE: ' + auction.Utropspris + ' SEK'
     }
     return badge
   }
