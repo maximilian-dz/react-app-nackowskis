@@ -145,7 +145,33 @@ label {
   padding: 0px 200px;
 }
 
-.react-icon
-{
-  margin-top: 20%;  
+.react-icon {
+  margin-top: 20%;
+}
+.summary-img img {
+  width: 250px !important;
+  display: inline-block !important;
+}
+.summary-title {
+  background-color: black;
+  padding: 2px 10px !important;
+  font-size: 20px !important;
+}
+.summary-bid {
+  top: 0 !important;
+  bottom: unset !important;
+  right: 0 !important;
+  left: unset !important;
+  padding: 2px 10px !important;
+  font-size: 17px !important;
+}
+.bid-color {
+  background: forestgreen;
+}
+.bid-color-alt {
+  background: red;
+}
+.summary-content {
+  color: black !important;
+  font-weight: 700 !important;
 }
