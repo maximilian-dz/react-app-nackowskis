@@ -63,7 +63,8 @@ export default class CreateAuction extends Component {
           <h5 className="center white-text">Add Auction</h5>
           <form className="col s12" onSubmit={this.handleSubmit}>
             <div className="input-field">
-              <label htmlFor="Title">Title </label>
+              <i className="material-icons prefix">text_format</i>
+              <label htmlFor="Titel">Title </label>
               <input
                 id="Titel"
                 name="Titel"
@@ -73,6 +74,7 @@ export default class CreateAuction extends Component {
             </div>
 
             <div className="input-field">
+              <i className="material-icons prefix">description</i>
               <label htmlFor="Beskrivning">Description </label>
               <input
                 id="Beskrivning"
@@ -83,7 +85,8 @@ export default class CreateAuction extends Component {
               />
             </div>
 
-            <div className="">
+            <div className="input-field">
+              <i className="material-icons prefix">date_range</i>
               <label htmlFor="StartDatum">Start Date </label>
               <input
                 className="black-border"
@@ -96,6 +99,7 @@ export default class CreateAuction extends Component {
             </div>
 
             <div className="input-field">
+              <i className="material-icons prefix">date_range</i>
               <label htmlFor="SlutDatum">End Date </label>
               <input
                 type="text"
@@ -107,7 +111,8 @@ export default class CreateAuction extends Component {
             </div>
 
             <div className="input-field">
-              <label htmlFor="Price">Starting Price </label>
+              <i className="material-icons prefix">attach_money</i>
+              <label htmlFor="Utropspris">Starting Price </label>
               <input
                 id="Utropspris"
                 name="Utropspris"
@@ -117,6 +122,7 @@ export default class CreateAuction extends Component {
             </div>
 
             <div className="input-field">
+              <i className="material-icons prefix">image</i>
               <label htmlFor="img">Add Picture</label>
               <input
                 type="text"
@@ -128,6 +134,7 @@ export default class CreateAuction extends Component {
             </div>
 
             <div className="input-field">
+              <i className="material-icons prefix">border_color</i>
               <label htmlFor="SkapadAv">Created by </label>
               <input
                 id="SkapadAv"
@@ -137,7 +144,7 @@ export default class CreateAuction extends Component {
               />
             </div>
 
-            <button className="btn btn:hover">Save Auction</button>
+            <button className="btn btn:hover center">Save Auction</button>
           </form>
         </div>
       </div>
