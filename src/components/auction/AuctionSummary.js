@@ -36,10 +36,31 @@ class AuctionSummary extends Component {
     return badge
   }
 
+  getImg = () => {
+    const { auction } = this.props
+
+    const index = auction.Beskrivning.indexOf('<')
+    const length = auction.Beskrivning.length
+    const img = auction.Beskrivning.substring(index, length)
+
+    return img
+  }
+
+  getDescription = () => {
+    const { auction } = this.props
+
+    const index = auction.Beskrivning.indexOf('<')
+    const description = auction.Beskrivning.substring(0, index)
+
+    return description
+  }
+
   render() {
     const { auction } = this.props
     const endDate = moment(auction.SlutDatum).format('ddd Do MMM, hh:mm')
     const badge = this.getBadge()
+    // const img = this.getImg()
+    // const description = this.getDescription()
 
     const content =
       badge === 'Auction Ended' ? (
