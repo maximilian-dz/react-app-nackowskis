@@ -18,9 +18,16 @@ export default class CreateAuction extends Component {
   }
 
   componentDidMount = () => {
+    const minDate = moment(new Date()).toDate()
+
+    const maxDate = moment(new Date())
+    .add(30, 'days')
+    .toDate()
     const options = {
       onSelect: this.handleDateChange,
-      autoClose: true
+      autoClose: true,
+      minDate,
+      maxDate
     }
     M.Datepicker.init(this.datepicker.current, options)
   }
@@ -50,12 +57,9 @@ export default class CreateAuction extends Component {
   handleDateChange = (date) => {
     const timeNow = moment().format('hh:mm:ss')
     const endDate = moment(date).format('YYYY-MM-DDT') + timeNow
-    //const min = 
 
     this.setState({
       SlutDatum: endDate,
-      // minDate: 0,
-      // maxDate: '+1m' 
     })
   }
 
