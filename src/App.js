@@ -84,7 +84,7 @@ class App extends Component {
     let auctions = this.state.filtered.filter((auction) => {
       return auction.AuktionID !== updatedAuction.AuktionID
     })
-    this.setState({ filtered: auctions })
+    this.setState({ filtered: auctions, auctions })
   }
 
   render() {
