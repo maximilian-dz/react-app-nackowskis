@@ -78,6 +78,7 @@ export default class CreateAuction extends Component {
                 name="Titel"
                 type="text"
                 onChange={this.handleChange}
+                required
               />
             </div>
 
@@ -90,6 +91,7 @@ export default class CreateAuction extends Component {
                 ref="Beskrivning"
                 type="text"
                 onChange={this.handleChange}
+                required
               />
             </div>
 
@@ -115,6 +117,7 @@ export default class CreateAuction extends Component {
                 id="SlutDatum"
                 name="SlutDatum"
                 ref={this.datepicker}
+                required
               />
             </div>
 
@@ -126,6 +129,7 @@ export default class CreateAuction extends Component {
                 name="Utropspris"
                 type="text"
                 onChange={this.handleChange}
+                required
               />
             </div>
 
@@ -138,6 +142,7 @@ export default class CreateAuction extends Component {
                 id="img"
                 name="img"
                 onChange={this.handleChange}
+                required
               />
             </div>
 
@@ -149,6 +154,7 @@ export default class CreateAuction extends Component {
                 name="SkapadAv"
                 type="text"
                 onChange={this.handleChange}
+                required
               />
             </div>
 
