@@ -12,17 +12,25 @@ export default class CreateAuction extends Component {
       StartDatum: moment().format('YYYY-MM-DDTHH:MM:SS'),
       SlutDatum: undefined,
       Utropspris: undefined,
-      SkapadAv: undefined,
+      SkapadAv: undefined
     }
     this.datepicker = React.createRef()
   }
 
   componentDidMount = () => {
+    const minDate = moment(new Date()).toDate()
+
+    const maxDate = moment(new Date())
+      .add(30, 'days')
+      .toDate()
     const options = {
       onSelect: this.handleDateChange,
-      autoClose: true
+      autoClose: true,
+      minDate,
+      maxDate
     }
     M.Datepicker.init(this.datepicker.current, options)
+    M.updateTextFields()
   }
 
   handleSubmit = (e) => {
@@ -38,7 +46,7 @@ export default class CreateAuction extends Component {
           this.refs.Beskrivning.value +
           "<img src='" +
           this.refs.img.value +
-          "/>"
+          '/>'
       })
     } else {
       this.setState({
@@ -50,12 +58,9 @@ export default class CreateAuction extends Component {
   handleDateChange = (date) => {
     const timeNow = moment().format('hh:mm:ss')
     const endDate = moment(date).format('YYYY-MM-DDT') + timeNow
-    //const min = 
 
     this.setState({
-      SlutDatum: endDate,
-      // minDate: 0,
-      // maxDate: '+1m' 
+      SlutDatum: endDate
     })
   }
 
@@ -90,7 +95,7 @@ export default class CreateAuction extends Component {
 
             <div className="input-field">
               <i className="material-icons prefix">date_range</i>
-              <label htmlFor="StartDatum">Start Date </label>
+              <label htmlFor="StartDatum">Start Date</label>
               <input
                 className="black-border"
                 type="text"
