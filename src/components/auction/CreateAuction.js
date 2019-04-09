@@ -36,7 +36,7 @@ export default class CreateAuction extends Component {
       this.setState({
         Beskrivning:
           this.refs.Beskrivning.value +
-          "<img src='" +
+          "<img className='summary-img-width' src='" +
           this.refs.img.value +
           "' alt='auction-pic'/>"
       })
