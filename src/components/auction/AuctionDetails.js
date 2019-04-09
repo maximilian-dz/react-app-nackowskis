@@ -12,7 +12,7 @@ export default class AuctionDetails extends Component {
       auction: null,
       isEditing: false,
       bids: [],
-      delError: null
+      hasBids: false
       // group: this.props.GroupId,
     }
   }
@@ -22,9 +22,11 @@ export default class AuctionDetails extends Component {
 
     getAuction(2020, id).then((auction) => {
       getBids(2020, id).then((bids) => {
+        const hasBids = bids.length ? true : false
         this.setState({
           bids,
-          auction
+          auction,
+          hasBids
         })
       })
     })
@@ -35,15 +37,8 @@ export default class AuctionDetails extends Component {
   }
 
   delete = (auction) => {
-    const { bids } = this.state
-    if (bids.length) {
-      this.setState({
-        delError: 'Auction has bids, cannot be deleted'
-      })
-    } else {
-      this.props.deleteAuction(auction)
-      this.props.history.push('/')
-    }
+    this.props.deleteAuction(auction)
+    this.props.history.push('/')
   }
 
   getImg = () => {
@@ -64,10 +59,7 @@ export default class AuctionDetails extends Component {
             <div className="col s12 16">
               <div className="card">
                 <div className="card-image">
-                  <img
-                    src={this.getImg()}
-                    alt="auction"
-                  />
+                  <img src={this.getImg()} alt="auction" />
                   <a
                     href="https://www.google.com"
                     className="halfway-fab btn-floating red pulse"
