@@ -59,7 +59,8 @@ class AuctionSummary extends Component {
     const { auction } = this.props
     const endDate = moment(auction.SlutDatum).format('ddd Do MMM, hh:mm')
     const badge = this.getBadge()
-    // const img = this.getImg()
+    const img = this.getImg()
+    console.log(img)
     // const description = this.getDescription()
 
     const content =
@@ -74,17 +75,19 @@ class AuctionSummary extends Component {
         <div className="col s12 m6">
           <div className="card">
             <div className="card-image center summary-img">
-              <img
+              {/* <img
                 className="summary-img-width"
                 src="https://cdn.shopify.com/s/files/1/1245/1481/products/Classic_Plus_Side_Profile_web_1024x1024.jpg?v=1531164809"
                 alt="auction-pic"
-              />
+              /> */}
+              {img}
               <span className="card-title summary-title">{auction.Titel}</span>
               {content}
             </div>
             <div className="card-action summary-content">
               <p>Bids: {this.state.bidCount}</p>
               <p>Auction Ends: {endDate}</p>
+              <p>{auction.AuktionID}</p>
             </div>
           </div>
         </div>
