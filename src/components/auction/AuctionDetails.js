@@ -61,8 +61,8 @@ export default class AuctionDetails extends Component {
       return (
         <div className="container">
           <div className="row">
-            <div className="col s12 16">
-              <div className="card">
+            <div className="col s12 16 flexbox">
+              <div className="card card-img">
                 <div className="card-image">
                   <img
                     src={this.getImg()}
