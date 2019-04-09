@@ -23,9 +23,11 @@ export default class AuctionInnerDetails extends Component {
 
   save = () => {
     let updatedAuction = this.state.auction
-    let imgStart = updatedAuction.Beskrivning.indexOf("<")
+    let imgStart = updatedAuction.Beskrivning.indexOf('<')
     updatedAuction['Titel'] = document.getElementById('title').value
-    updatedAuction['Beskrivning'] = document.getElementById('description').value + updatedAuction.Beskrivning.substring(imgStart)
+    updatedAuction['Beskrivning'] =
+      document.getElementById('description').value +
+      updatedAuction.Beskrivning.substring(imgStart)
     this.setState({ auction: updatedAuction })
     updateAuction(
       this.state.auction.Gruppkod,
@@ -106,13 +108,13 @@ export default class AuctionInnerDetails extends Component {
               <span className="card-title" id="title">
                 {this.state.auction.Titel}
               </span>
-              <p id="description" className="center">
+              <p id="description" className="margin-bottom-30">
                 {this.getDescription()}
               </p>
-              <p>Ends: {this.state.endDate}</p>
-              <p className="created-by">
+              <span>Ends: {this.state.endDate}</span>
+              <span className="created-by">
                 Created by: {this.state.auction.SkapadAv}
-              </p>
+              </span>
             </div>
             <div className="card-action center">
               <button
