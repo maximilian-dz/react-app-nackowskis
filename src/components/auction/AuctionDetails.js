@@ -101,6 +101,7 @@ export default class AuctionDetails extends Component {
                   isEditing={this.state.isEditing}
                   save={this.save}
                   delete={this.delete}
+                  hasBids={this.state.hasBids}
                 />
               </div>
             </div>

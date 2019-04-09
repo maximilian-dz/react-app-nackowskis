@@ -57,7 +57,7 @@ export default class AuctionInnerDetails extends Component {
     if (this.state.auction != null)
       if (this.state.isEditing) {
         return (
-          <div>
+          <div className="padding-20">
             <div className="input-field">
               <input
                 className="text-black"
@@ -86,12 +86,14 @@ export default class AuctionInnerDetails extends Component {
               >
                 Save
               </button>
-              <button
-                className="btn waves-effect waves-light"
-                onClick={this.delete}
-              >
-                Delete
-              </button>
+              {this.props.hasBids ? null : (
+                <button
+                  className="btn waves-effect waves-light"
+                  onClick={this.delete}
+                >
+                  Delete
+                </button>
+              )}
               <button
                 className="btn waves-effect waves-light"
                 onClick={this.cancel}
