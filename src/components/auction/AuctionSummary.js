@@ -61,7 +61,7 @@ class AuctionSummary extends Component {
       <div>
         <div className="col s12 m6">
           <div className="card">
-            <div className="card-image center summary-img">
+            <div className="card-image center summary-img flexbox">
               <img className="summary-img-width" src={img} alt="auction-pic" />
               <span className="card-title summary-title">{auction.Titel}</span>
               {content}
@@ -69,7 +69,6 @@ class AuctionSummary extends Component {
             <div className="card-action summary-content">
               <p>Bids: {this.state.bidCount}</p>
               <p>Auction Ends: {endDate}</p>
-              <p>{auction.AuktionID}</p>
             </div>
           </div>
         </div>

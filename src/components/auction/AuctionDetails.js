@@ -54,7 +54,7 @@ export default class AuctionDetails extends Component {
     const { auction } = this.state
     if (auction != null) {
       return (
-        <div className="container">
+        <div className="container margin-top-50">
           <div className="row">
             <div className="col s12 16 flexbox">
               <div className="card card-img">

@@ -6,7 +6,6 @@ const BidSummary = ({ bid }) => {
       <i className="material-icons circle black">person</i>
       <span className="title">{bid.Budgivare}</span>
       <span className="test-class">{bid.Summa} SEK</span>
-      <p>{bid.BudID}</p>
     </li>
   ) : null
 }

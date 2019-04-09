@@ -32,10 +32,10 @@ body {
   padding-bottom: 0 !important;
 }
 .flexbox {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
 }
 .no-margin {
   margin: 0;
@@ -151,6 +151,9 @@ label {
 .summary-img img {
   width: 250px !important;
   display: inline-block !important;
+}
+.summary-img {
+  min-height: 256.22px !important;
 }
 .summary-title {
   background-color: black;
