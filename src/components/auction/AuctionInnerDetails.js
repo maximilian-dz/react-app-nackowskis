@@ -104,7 +104,7 @@ export default class AuctionInnerDetails extends Component {
       } else {
         return (
           <div>
-            <div className="card-content">
+            <div className="card-content card-action">
               <span className="card-title" id="title">
                 {this.state.auction.Titel}
               </span>
