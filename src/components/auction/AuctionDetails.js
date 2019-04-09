@@ -46,6 +46,15 @@ export default class AuctionDetails extends Component {
     }
   }
 
+  getImg = () => {
+    const { auction } = this.state
+    var start = auction.Beskrivning.indexOf("'") + 1
+    var end = auction.Beskrivning.lastIndexOf("'") - start
+    var url = auction.Beskrivning.substring(start, end)
+
+    return url
+  }
+
   render() {
     const { auction } = this.state
     if (auction != null) {
@@ -56,7 +65,7 @@ export default class AuctionDetails extends Component {
               <div className="card">
                 <div className="card-image">
                   <img
-                    src="https://khsbicycles.com/wp-content/plugins/vslider/timthumb.php?src=http%3A%2F%2Fkhsbicycles.com%2Fwp-content%2Fuploads%2F2016%2F07%2Fkhs-bicycles-masthead-1000x300-fat-bike-tree.jpg&w=1000&h=300&zc=1&q=80"
+                    src={this.getImg()}
                     alt="auction"
                   />
                   <a

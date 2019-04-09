@@ -23,8 +23,9 @@ export default class AuctionInnerDetails extends Component {
 
   save = () => {
     let updatedAuction = this.state.auction
+    let imgStart = updatedAuction.Beskrivning.indexOf("<")
     updatedAuction['Titel'] = document.getElementById('title').value
-    updatedAuction['Beskrivning'] = document.getElementById('description').value
+    updatedAuction['Beskrivning'] = document.getElementById('description').value + updatedAuction.Beskrivning.substring(imgStart)
     this.setState({ auction: updatedAuction })
     updateAuction(
       this.state.auction.Gruppkod,
@@ -39,6 +40,15 @@ export default class AuctionInnerDetails extends Component {
     deleteAuction(this.state.auction.Gruppkod, this.state.id)
     this.props.delete(this.state.auction)
     this.setState({ auction: null })
+  }
+
+  getDescription = () => {
+    const { auction } = this.state
+
+    const index = auction.Beskrivning.indexOf('<')
+    const description = auction.Beskrivning.substring(0, index)
+
+    return description
   }
 
   render() {
@@ -61,7 +71,7 @@ export default class AuctionInnerDetails extends Component {
               <input
                 className="text-black"
                 id="description"
-                defaultValue={this.state.auction.Beskrivning}
+                defaultValue={this.getDescription()}
               />
               <label className="active" htmlFor="description">
                 Description
@@ -97,7 +107,7 @@ export default class AuctionInnerDetails extends Component {
                 {this.state.auction.Titel}
               </span>
               <p id="description" className="center">
-                {this.state.auction.Beskrivning}
+                {this.getDescription()}
               </p>
               <p>Ends: {this.state.endDate}</p>
               <p className="created-by">
