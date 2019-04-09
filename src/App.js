@@ -35,9 +35,13 @@ class App extends Component {
   }
 
   handleSearch = (val) => {
-    const newList = this.state.auctions.filter((auction) =>
-      auction.Titel.toLowerCase().includes(val)
-    )
+    const today = Date.now()
+
+    const newList = this.state.auctions
+      .sort((a, b) => (a.SlutDatum < b.SlutDatum ? 1 : -1))
+      .sort((auction) => (Date.parse(auction.SlutDatum) < today ? 0 : -1))
+      .filter((auction) => auction.Titel.toLowerCase().includes(val))
+
     this.setState({
       filtered: newList,
       isSearch: true
