@@ -44,7 +44,7 @@ export default class AuctionDetails extends Component {
   getImg = () => {
     const { auction } = this.state
     var start = auction.Beskrivning.indexOf("'") + 1
-    var end = auction.Beskrivning.lastIndexOf("'") - start
+    var end = auction.Beskrivning.lastIndexOf("'")
     var url = auction.Beskrivning.substring(start, end)
 
     return url
