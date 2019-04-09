@@ -59,8 +59,6 @@ class AuctionSummary extends Component {
     const endDate = moment(auction.SlutDatum).format('ddd Do MMM, hh:mm')
     const badge = this.getBadge()
     const img = this.getImg()
-    console.log(img)
-    // const description = this.getDescription()
 
     const content =
       badge === 'Auction Ended' ? (
