@@ -38,12 +38,11 @@ class AuctionSummary extends Component {
 
   getImg = () => {
     const { auction } = this.props
+    var start = auction.Beskrivning.indexOf("'") + 1
+    var end = auction.Beskrivning.lastIndexOf("'") - start
+    var url = auction.Beskrivning.substring(start, end)
 
-    const index = auction.Beskrivning.indexOf('<')
-    const length = auction.Beskrivning.length
-    const img = auction.Beskrivning.substring(index, length)
-
-    return img
+    return url
   }
 
   getDescription = () => {
@@ -75,12 +74,7 @@ class AuctionSummary extends Component {
         <div className="col s12 m6">
           <div className="card">
             <div className="card-image center summary-img">
-              {/* <img
-                className="summary-img-width"
-                src="https://cdn.shopify.com/s/files/1/1245/1481/products/Classic_Plus_Side_Profile_web_1024x1024.jpg?v=1531164809"
-                alt="auction-pic"
-              /> */}
-              {img}
+              <img className="summary-img-width" src={img} alt="auction-pic" />
               <span className="card-title summary-title">{auction.Titel}</span>
               {content}
             </div>
