@@ -50,8 +50,35 @@ export default class AuctionDetails extends Component {
     return url
   }
 
+  getBadge = () => {
+    const { auction } = this.state
+
+    if (!auction) {
+      return null
+    }
+    let badge = ''
+
+    if (Date.parse(auction.SlutDatum) < Date.now()) {
+      badge = 'Auction Ended'
+    } else {
+      badge = 'ESTIMATE: ' + auction.Utropspris + ' SEK'
+    }
+    return badge
+  }
+
   render() {
     const { auction } = this.state
+    const badge = this.getBadge()
+
+    console.log(badge)
+
+    const content =
+      badge === 'Auction Ended' ? (
+        <span className="card-title summary-bid bid-color-alt">{badge}</span>
+      ) : (
+        <span className="card-title summary-bid bid-color">{badge}</span>
+      )
+
     if (auction != null) {
       return (
         <div className="container margin-top-50">
@@ -66,6 +93,7 @@ export default class AuctionDetails extends Component {
                   >
                     <i className="material-icons">favorite</i>
                   </a>
+                  {content}
                 </div>
                 <AuctionInnerDetails
                   id={this.state.id}

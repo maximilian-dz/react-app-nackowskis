@@ -157,6 +157,7 @@ label {
 }
 .summary-img {
   min-height: 256.22px !important;
+  max-height: 256.22px !important;
 }
 .summary-title {
   background-color: black;

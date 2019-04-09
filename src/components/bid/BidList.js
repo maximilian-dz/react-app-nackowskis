@@ -23,6 +23,10 @@ export class BidList extends Component {
       return bid.Summa > max ? bid.Summa : max
     }, 0)
 
+    console.log(auctionId)
+    console.log(newBid)
+    console.log(highestBid)
+
     if (highestBid >= newBid.Summa) {
       msg = 'Your bid must be higher than ' + highestBid
       this.setState({
