@@ -175,3 +175,7 @@ label {
   color: black !important;
   font-weight: 700 !important;
 }
+
+.card-img {
+  width: 500px;
+}
