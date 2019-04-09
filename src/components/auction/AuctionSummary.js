@@ -41,9 +41,6 @@ class AuctionSummary extends Component {
     var start = auction.Beskrivning.indexOf("'") + 1
     var end = auction.Beskrivning.lastIndexOf("'")
     var url = auction.Beskrivning.substring(start, end)
-    console.log(auction.Beskrivning, 'BESKRIVNING')
-    console.log(url, 'URLEN')
-
     return url
   }
 
