@@ -39,19 +39,12 @@ class AuctionSummary extends Component {
   getImg = () => {
     const { auction } = this.props
     var start = auction.Beskrivning.indexOf("'") + 1
-    var end = auction.Beskrivning.lastIndexOf("'") - start
+    var end = auction.Beskrivning.lastIndexOf("'")
     var url = auction.Beskrivning.substring(start, end)
+    console.log(auction.Beskrivning, 'BESKRIVNING')
+    console.log(url, 'URLEN')
 
     return url
-  }
-
-  getDescription = () => {
-    const { auction } = this.props
-
-    const index = auction.Beskrivning.indexOf('<')
-    const description = auction.Beskrivning.substring(0, index)
-
-    return description
   }
 
   render() {
