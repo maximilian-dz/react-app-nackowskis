@@ -57,7 +57,7 @@ export default class AuctionDetails extends Component {
       return null
     }
     let badge = ''
-    
+
     const highestBid = [...this.state.bids].reduce((max, bid) => {
       return bid.Summa > max ? bid.Summa : max
     }, 0)
@@ -73,8 +73,6 @@ export default class AuctionDetails extends Component {
   render() {
     const { auction } = this.state
     const badge = this.getBadge()
-
-    console.log(badge)
 
     const content =
       badge !== null && badge.startsWith('Auction Ended') ? (
