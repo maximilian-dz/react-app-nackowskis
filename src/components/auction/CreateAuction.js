@@ -157,8 +157,9 @@ export default class CreateAuction extends Component {
                 required
               />
             </div>
-
-            <button className="btn btn:hover center">Save Auction</button>
+            <div className="input-field center">
+              <button className="btn btn:hover center">Save Auction</button>
+            </div>
           </form>
         </div>
       </div>

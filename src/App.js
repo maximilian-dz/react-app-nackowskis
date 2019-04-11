@@ -40,7 +40,9 @@ class App extends Component {
     const newList = this.state.auctions
       .sort((a, b) => (a.SlutDatum < b.SlutDatum ? 1 : -1))
       .sort((auction) => (Date.parse(auction.SlutDatum) < today ? 0 : -1))
-      .filter((auction) => auction.Titel.toLowerCase().includes(val))
+      .filter((auction) =>
+        auction.Titel.toLowerCase().includes(val.toLowerCase())
+      )
 
     this.setState({
       filtered: newList,
