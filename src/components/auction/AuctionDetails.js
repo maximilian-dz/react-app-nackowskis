@@ -59,7 +59,7 @@ export default class AuctionDetails extends Component {
     let badge = ''
 
     if (Date.parse(auction.SlutDatum) < Date.now()) {
-      badge = 'Auction Ended'
+      badge = 'Auction Ended at ' + auction.Utropspris + ' SEK'
     } else {
       badge = 'ESTIMATE: ' + auction.Utropspris + ' SEK'
     }
@@ -73,7 +73,7 @@ export default class AuctionDetails extends Component {
     console.log(badge)
 
     const content =
-      badge === 'Auction Ended' ? (
+      badge !== null && badge.startsWith('Auction Ended') ? (
         <span className="card-title summary-bid bid-color-alt">{badge}</span>
       ) : (
         <span className="card-title summary-bid bid-color">{badge}</span>
