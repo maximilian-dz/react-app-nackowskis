@@ -57,9 +57,13 @@ export default class AuctionDetails extends Component {
       return null
     }
     let badge = ''
+    
+    const highestBid = [...this.state.bids].reduce((max, bid) => {
+      return bid.Summa > max ? bid.Summa : max
+    }, 0)
 
     if (Date.parse(auction.SlutDatum) < Date.now()) {
-      badge = 'Auction Ended at ' + auction.Utropspris + ' SEK'
+      badge = 'Auction Ended at ' + highestBid + ' SEK'
     } else {
       badge = 'ESTIMATE: ' + auction.Utropspris + ' SEK'
     }
