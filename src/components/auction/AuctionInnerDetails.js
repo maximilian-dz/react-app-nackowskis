@@ -110,11 +110,13 @@ export default class AuctionInnerDetails extends Component {
               <span className="card-title" id="title">
                 {this.state.auction.Titel}
               </span>
-              <p id="description" className="margin-bottom-30">
+              <p id="description" className="margin-bottom-40">
                 {this.getDescription()}
               </p>
-              <span>Ends: {this.state.endDate}</span>
-              <span className="created-by">
+              <span className="red-text lighten-1">
+                Ends: {this.state.endDate}
+              </span>
+              <span className="created-by grey-text darken-4  ">
                 Created by: {this.state.auction.SkapadAv}
               </span>
             </div>

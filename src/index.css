@@ -129,8 +129,8 @@ footer {
 .margin-bottom-50 {
   margin-bottom: 50px !important;
 }
-.margin-bottom-30 {
-  margin-bottom: 30px !important;
+.margin-bottom-40 {
+  margin-bottom: 40px !important;
 }
 .margin-top-50 {
   margin-top: 50px !important;
@@ -189,4 +189,11 @@ label {
 
 .padding-20 {
   padding: 20px;
+}
+.detail-summary {
+  min-height: 350px;
+}
+.detail-summary img {
+  width: 350px !important;
+  display: inline-block !important;
 }
